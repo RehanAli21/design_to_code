@@ -8,12 +8,17 @@
 		<meta
 			http-equiv="X-Content-Security-Policy"
 			content="default-src 'self'; script-src 'self'" />
-		<title>Hello from Electron renderer!</title>
+		<title>Design To Code</title>
+		<link
+			rel="stylesheet"
+			href="./style_sheets/global.css" />
 	</head>
 	<body>
-		<h1>Hello from Electron renderer!</h1>
-		<p>👋</p>
-		<p id="info"></p>
+		<main id="application-root">
+			<div id="left-sidebar"></div>
+			<div id="output-area"></div>
+			<div id="right-sidebar"></div>
+		</main>
 	</body>
-	<script src="../js_scripts/renderer.js"></script>
+	<script src="./js_scripts/renderer.js"></script>
 </html>
