@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Design To Code</title>
+		<link
+			rel="stylesheet"
+			href="css_files/global.css" />
+	</head>
+	<body>
+		<div id="root">
+			<header>
+				<nav class="navbar">
+					<div class="logo">MySite</div>
+					<label
+						for="menu-toggle"
+						class="menu-icon"
+						>&#9776;</label
+					>
+					<input
+						type="checkbox"
+						id="menu-toggle" />
+					<div class="nav-links">
+						<a href="#">Home</a>
+						<a href="#">About</a>
+						<a href="#">Services</a>
+						<a href="#">Contact</a>
+					</div>
+				</nav>
+			</header>
+			<main>
+				<div id="left_sidebar">component list and list of showing what user has build in hierarchy</div>
+				<div id="page_viewer">
+					<div
+						class="draggable"
+						id="page"></div>
+				</div>
+				<div id="right_sidebar">properties ofthe selected element with different states</div>
+			</main>
+		</div>
+
+		<script src="./js_scripts/main.js"></script>
+		<script src="./js_scripts/drag_mode.js"></script>
+	</body>
+</html>

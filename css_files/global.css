@@ -1,0 +1,144 @@
+:root {
+	--shade-one: #e3e3e3;
+	--shade-two: #dadada;
+	--shade-three: #b8b8b8;
+	--shade-four: #969696;
+	--shade-five: #747474;
+	--shade-six: #525252;
+	--blue-shade-one: #50697a;
+	--blue-shade-two: #8797a4;
+	--blue-shade-three: #273f4f;
+	--blue-shade-four: #a7bfcf;
+	--blue-shade-five: #a0d6f9;
+	--blue-shade-six: #7acaff;
+	--primary-color: #18c3cf;
+	--secondary-color: #cf4319;
+	--ternary-color: #4f3831;
+	--dark-color: #0f0a0a;
+}
+
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+/* body {
+	background-color: var(--bg-color);
+} */
+
+#root {
+	display: grid;
+	grid-template-rows: 5vh 95vh;
+}
+
+body {
+	font-family: Arial, sans-serif;
+}
+
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	max-width: 1000px;
+	margin: auto;
+	color: black;
+	height: 5vh;
+}
+
+.logo {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+input[type='checkbox'] {
+	display: none;
+}
+
+.menu-icon {
+	display: none;
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+
+.nav-links {
+	display: flex;
+	gap: 20px;
+}
+
+.nav-links a {
+	color: black;
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.nav-links a:hover {
+	color: grey;
+}
+
+@media (max-width: 768px) {
+	.menu-icon {
+		display: block;
+	}
+
+	.nav-links {
+		flex-direction: column;
+		width: 100%;
+		display: none;
+		position: absolute;
+		top: 5vh;
+		margin-top: 10px;
+		background-color: white;
+	}
+
+	input:checked ~ .nav-links {
+		display: flex;
+	}
+}
+
+main {
+	display: grid;
+	grid-template-columns: 20% auto 20%;
+}
+
+#right_sidebar {
+	background-color: orange;
+}
+
+#page_viewer {
+	background-color: var(--shade-one);
+	cursor: grab;
+	position: relative;
+	overflow: hidden;
+}
+#page_viewer:active {
+	cursor: grabbing;
+}
+
+.draggable {
+	width: 150px;
+	height: 150px;
+	background-color: #4caf50;
+	position: absolute;
+	top: 20%;
+	left: 40%;
+	cursor: grab;
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-weight: bold;
+	user-select: none;
+}
+
+#page {
+	min-width: 300px;
+	min-height: 300px;
+	background-color: white;
+}
+
+#left_sidebar {
+	background-color: chocolate;
+}
