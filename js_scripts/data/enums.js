@@ -1,0 +1,6 @@
+export const PageModes = Object.freeze({
+	SMALL: 'small',
+	MEDIUM: 'medium',
+	LARGE: 'large',
+	XLARGE: 'xlarge',
+})
