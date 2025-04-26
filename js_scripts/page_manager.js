@@ -3,12 +3,15 @@ import PagesData from './data/page_data.js'
 const select_for_delete_page = document.getElementById('delete-page-select')
 const select = document.getElementById('select_active_page_select')
 
+// for changing active page
 select.addEventListener('change', e => {
 	PagesData.activePage = e.target.value
 
 	setPageActiveState()
 })
 
+// for showing pages in main select which let user change page
+// and delete select which let user delete page
 function setPageActiveState() {
 	const activePageValue = PagesData.activePage
 
