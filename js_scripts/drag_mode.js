@@ -7,9 +7,10 @@ let oldY = 0
 
 let x_translate = 0
 let y_translate = 0
+let scale = 1
 
 function changeState() {
-	box.style.transform = `translate(${x_translate}px, ${y_translate}px)`
+	box.style.transform = `scale(${scale}) translate(${x_translate}px, ${y_translate}px)`
 }
 
 box_container.addEventListener('mousedown', () => {
@@ -21,7 +22,6 @@ function disableMovement() {
 	move = false
 	box_container.style.cursor = ''
 }
-
 box_container.addEventListener('mouseup', disableMovement)
 box_container.addEventListener('mouseleave', disableMovement)
 
@@ -31,6 +31,9 @@ function resetEveryThing() {
 	oldY = 0
 	x_translate = 0
 	y_translate = 0
+	scale = 1
+
+	changeState()
 }
 box_container.addEventListener('dblclick', resetEveryThing)
 
@@ -53,4 +56,14 @@ box_container.addEventListener('mousemove', e => {
 
 		changeState()
 	}
+})
+
+box_container.addEventListener('wheel', e => {
+	if (e.deltaY === -100) {
+		scale += 0.05
+	} else if (e.deltaY === 100) {
+		scale -= 0.05
+	}
+
+	changeState()
 })
