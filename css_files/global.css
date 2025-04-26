@@ -5,7 +5,7 @@
 	--shade-four: #969696;
 	--shade-five: #747474;
 	--shade-six: #525252;
-	--text: #06010d;
+	--text: #282828;
 	--background: #fdfdfd;
 	--primary: #6a1ce8;
 	--secondary: #f386aa;
@@ -31,6 +31,16 @@ body {
 	font-family: Arial, sans-serif;
 }
 
+#theme-toggle {
+	background-color: var(--background);
+	border: none;
+	transform: scale(1.5);
+}
+
+header {
+	background-color: var(--background);
+}
+
 .navbar {
 	display: flex;
 	justify-content: space-between;
@@ -38,7 +48,7 @@ body {
 	flex-wrap: wrap;
 	max-width: 1000px;
 	margin: auto;
-	color: black;
+	color: var(--text);
 	height: 50px;
 }
 
@@ -63,13 +73,13 @@ input[type='checkbox'] {
 }
 
 .nav-links a {
-	color: black;
+	color: var(--text);
 	text-decoration: none;
 	transition: color 0.3s;
 }
 
 .nav-links a:hover {
-	color: grey;
+	color: var(--shade-three);
 }
 
 @media (max-width: 768px) {
