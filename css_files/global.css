@@ -24,7 +24,7 @@
 
 #root {
 	display: grid;
-	grid-template-rows: 5vh 95vh;
+	grid-template-rows: 50px calc(100vh - 50px);
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 	max-width: 1000px;
 	margin: auto;
 	color: black;
-	height: 5vh;
+	height: 50px;
 }
 
 .logo {
@@ -98,11 +98,13 @@ main {
 }
 
 #right_sidebar {
-	background-color: orange;
+	background-color: var(--shade-one);
+	box-shadow: 0px 5px 5px var(--shade-five);
+	z-index: 1;
 }
 
 #page_viewer {
-	background-color: var(--shade-one);
+	background-color: var(--shade-two);
 	cursor: grab;
 	position: relative;
 	overflow: hidden;
@@ -134,5 +136,7 @@ main {
 }
 
 #left_sidebar {
-	background-color: chocolate;
+	background-color: var(--shade-one);
+	box-shadow: 0px 5px 5px var(--shade-five);
+	z-index: 1;
 }
