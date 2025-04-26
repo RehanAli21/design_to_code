@@ -34,7 +34,24 @@
 				</nav>
 			</header>
 			<main>
-				<div id="left_sidebar"></div>
+				<div id="left_sidebar">
+					<div id="select_active_page">
+						<p>Page:</p>
+						<select
+							class="select"
+							id="select_active_page_select"></select>
+						<button
+							class="btn"
+							onclick="showDialogBoxContainer('add_page_dialog_box')">
+							+
+						</button>
+						<button
+							class="btn danger_btn"
+							onclick="showDialogBoxContainer('delete_page_dialog_box')">
+							-
+						</button>
+					</div>
+				</div>
 				<div id="page_viewer">
 					<div
 						class="draggable"
@@ -45,8 +62,45 @@
 				<div id="right_sidebar"></div>
 			</main>
 		</div>
+		<div id="dialog_box_container">
+			<div
+				class="dialog_box"
+				id="add_page_dialog_box">
+				<button class="btn btn_border closebtn dialog_box_container_closebtn">Close</button>
+				<h2>Adding New Page</h2>
+				<input
+					class="input"
+					type="text"
+					placeholder="Page Name"
+					id="add_page_input" />
+				<button
+					id="add_page_btn"
+					class="btn btn_border">
+					Add page
+				</button>
+			</div>
+			<div
+				class="dialog_box"
+				id="delete_page_dialog_box">
+				<button class="btn btn_border closebtn dialog_box_container_closebtn">Close</button>
+				<h2>Delete Page</h2>
+				<select
+					name="delete-page-select"
+					id="delete-page-select"
+					class="select"></select>
+				<button
+					id="delete_page_btn"
+					class="btn btn_border">
+					Delete page
+				</button>
+			</div>
+		</div>
 		<script src="./js_scripts/change_theme.js"></script>
 		<script src="./js_scripts/drag_mode.js"></script>
+		<script src="./js_scripts/dialog_box_manager.js"></script>
+		<script
+			type="module"
+			src="./js_scripts/page_manager.js"></script>
 		<script
 			type="module"
 			src="./js_scripts/main.js"></script>
