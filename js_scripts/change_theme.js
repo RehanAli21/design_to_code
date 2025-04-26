@@ -6,7 +6,7 @@ themeToggler.textContent = theme && theme == 'dark' ? '🌞' : theme && theme ==
 if (!theme) {
 	window.localStorage.setItem('theme', 'light')
 } else {
-	changeRootVars()
+	changeRootVars(theme)
 }
 
 function changeTheme() {
