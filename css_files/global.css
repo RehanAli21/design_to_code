@@ -5,16 +5,11 @@
 	--shade-four: #969696;
 	--shade-five: #747474;
 	--shade-six: #525252;
-	--blue-shade-one: #50697a;
-	--blue-shade-two: #8797a4;
-	--blue-shade-three: #273f4f;
-	--blue-shade-four: #a7bfcf;
-	--blue-shade-five: #a0d6f9;
-	--blue-shade-six: #7acaff;
-	--primary-color: #18c3cf;
-	--secondary-color: #cf4319;
-	--ternary-color: #4f3831;
-	--dark-color: #0f0a0a;
+	--text: #06010d;
+	--background: #fdfdfd;
+	--primary: #6a1ce8;
+	--secondary: #f386aa;
+	--accent: #ed6052;
 }
 
 * {
@@ -123,7 +118,6 @@ main {
 	position: absolute;
 	top: 20%;
 	left: 40%;
-	cursor: grab;
 	border-radius: 10px;
 	display: flex;
 	justify-content: center;
