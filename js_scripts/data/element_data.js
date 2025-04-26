@@ -1,3 +1,5 @@
-export default ElementData = {
+const ElementData = {
 	activeElementId: '',
 }
+
+export default ElementData

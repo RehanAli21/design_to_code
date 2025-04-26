@@ -43,10 +43,10 @@ header {
 
 .navbar {
 	display: flex;
+	padding: 10px 20px;
 	justify-content: space-between;
 	align-items: center;
 	flex-wrap: wrap;
-	max-width: 1000px;
 	margin: auto;
 	color: var(--text);
 	height: 50px;

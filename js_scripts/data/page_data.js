@@ -1,6 +1,6 @@
-import { PageModes } from './enums'
+import { PageModes } from './enums.js'
 
-export default PagesData = {
+const PagesData = {
 	pages: {
 		home: {
 			'background-color': 'white',
@@ -8,5 +8,7 @@ export default PagesData = {
 		},
 	},
 	activePage: 'home',
-	pageWidthMode: PageModes.LARGE,
+	pageWidthMode: PageModes.XSMALL,
 }
+
+export default PagesData

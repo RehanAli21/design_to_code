@@ -1,37 +1,21 @@
 let theme = window.localStorage.getItem('theme')
 const themeToggler = document.getElementById('theme-toggle')
 
+themeToggler.textContent = theme && theme == 'dark' ? '🌞' : theme && theme == 'light' ? '🌙' : '🌙'
+
 if (!theme) {
 	window.localStorage.setItem('theme', 'light')
-	themeToggler.textContent = '🌙' // Dark mode
 } else {
-	// Change button icon
-	if (theme == 'dark') {
-		themeToggler.textContent = '🌙' // Dark mode
-	} else {
-		themeToggler.textContent = '🌞' // Light mode
-	}
+	changeRootVars()
 }
 
 function changeTheme() {
-	// Get the theme value from localStorage
-	let theme = window.localStorage.getItem('theme')
+	theme = window.localStorage.getItem('theme')
 
-	if (theme) {
-		if (theme == 'light') {
-			const newThemeMode = 'dark'
-			changeRootVars(newThemeMode)
-			window.localStorage.setItem('theme', newThemeMode)
-		} else if (theme == 'dark') {
-			const newThemeMode = 'light'
-			changeRootVars(newThemeMode)
-			window.localStorage.setItem('theme', newThemeMode)
-		}
-	} else {
-		const newThemeMode = 'dark'
-		changeRootVars(newThemeMode)
-		window.localStorage.setItem('theme', newThemeMode)
-	}
+	const newThemeMode = theme && theme == 'light' ? 'dark' : theme && theme == 'dark' ? 'light' : 'dark'
+
+	changeRootVars(newThemeMode)
+	window.localStorage.setItem('theme', newThemeMode)
 }
 
 function changeRootVars(theme) {
