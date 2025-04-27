@@ -24,6 +24,29 @@
 	background-color: var(--background);
 }
 
+/* For Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+	width: 5px; /* width of vertical scrollbar */
+	height: 10px; /* height of horizontal scrollbar */
+}
+
+/* Track (the background) */
+::-webkit-scrollbar-track {
+	background: var(--background);
+	border-radius: 5px;
+}
+
+/* Handle (the draggable thing) */
+::-webkit-scrollbar-thumb {
+	background: var(--shade-four);
+	border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--shade-six);
+}
+
 div,
 p {
 	background-color: transparent;
@@ -160,6 +183,8 @@ main {
 	background-color: var(--shade-one);
 	box-shadow: 0px 5px 5px var(--shade-five);
 	z-index: 1;
+	display: grid;
+	grid-template-rows: 50px auto 40vh;
 }
 
 #select_active_page {
@@ -170,7 +195,6 @@ main {
 	margin-right: 10px;
 	text-align: center;
 	align-items: center;
-	border-bottom: 1px solid var(--text);
 }
 
 #select_active_page button {
@@ -231,6 +255,17 @@ main {
 	background-color: var(--success-color);
 }
 
+#elements_div {
+	display: grid;
+	overflow-y: scroll;
+	gap: 5px;
+	padding: 10px 5px;
+}
+
+#elements_div > button {
+	height: 40px;
+}
+
 /* --------------general classes------------------------ */
 .outlined {
 	outline: 2px solid var(--primary);
@@ -246,6 +281,10 @@ main {
 	align-items: center;
 	font-size: var(--font-size-one);
 	border-radius: 5px;
+}
+
+.btn:hover {
+	filter: brightness(105%);
 }
 
 .btn_border {
@@ -267,6 +306,10 @@ main {
 
 .input {
 	padding: 10px 15px;
+}
+
+.top_border {
+	border-top: 1px solid var(--shade-six);
 }
 
 /* ------------------------------------------------------------ */

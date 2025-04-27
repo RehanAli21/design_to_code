@@ -5,3 +5,13 @@ export const PageModes = {
 	LARGE: '1200',
 	XLARGE: '1400',
 }
+
+export const ElementTags = {
+	DIV: 'div',
+	BUTTON: 'button',
+	INPUT: 'input',
+	SELECT: 'select',
+	TEXT: 'text',
+	OPTION: 'option',
+	LINK: 'a',
+}

@@ -1,4 +1,5 @@
-import ElementData from './data/element_data.js'
+import { ElementData } from './data/element_data.js'
+import { showAvailableElements } from './show_elements_to_add.js'
 
 let prevActiveElementId = ''
 
@@ -20,5 +21,7 @@ export function changeActiveElement(e) {
 
 	prevActiveElementId = e.target.id
 	ElementData.activeElementId = e.target.id
+
+	showAvailableElements()
 }
 document.getElementById('page').addEventListener('click', changeActiveElement)
