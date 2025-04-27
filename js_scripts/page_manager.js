@@ -1,4 +1,5 @@
 import PagesData from './data/page_data.js'
+import { main_div_for_page } from './elements/basic_div.js'
 
 const select_for_delete_page = document.getElementById('delete-page-select')
 const select = document.getElementById('select_active_page_select')
@@ -68,7 +69,7 @@ function addPage() {
 
 		PagesData.pages[input.value] = {
 			'background-color': 'white',
-			chlidren: [],
+			chlidren: [main_div_for_page()],
 		}
 
 		setPageActiveState()

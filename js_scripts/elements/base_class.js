@@ -4,7 +4,8 @@ class TagElement {
 		this.name = name
 		this.showChildrenInHeirarchy = false
 		this.id = id ? id : ''
-		this.classes = classes ? innerText : ''
+		this.classes = classes ? classes : []
+		this.innerText = innerText ? innerText : ''
 		this.can_have_children = can_have_children ? can_have_children : false
 		this.styles = styles
 			? styles

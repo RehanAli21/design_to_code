@@ -1,4 +1,4 @@
-import TagElement from './base_class'
+import TagElement from './base_class.js'
 
 class Div extends TagElement {
 	constructor(name, id) {
