@@ -5,7 +5,7 @@ const PagesData = {
 	pages: {
 		home: {
 			'background-color': 'white',
-			chlidren: [main_div_for_page()],
+			children: [main_div_for_page()],
 		},
 	},
 	activePage: 'home',

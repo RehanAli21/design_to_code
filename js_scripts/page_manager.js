@@ -1,5 +1,6 @@
 import PagesData from './data/page_data.js'
 import { main_div_for_page } from './elements/basic_div.js'
+import { printCurrentPageHierarchy } from './show_elements_hierarchy.js'
 
 const select_for_delete_page = document.getElementById('delete-page-select')
 const select = document.getElementById('select_active_page_select')
@@ -47,6 +48,8 @@ function setPageActiveState() {
 
 		select_for_delete_page.value = activePageValue
 	}
+
+	printCurrentPageHierarchy()
 }
 
 setPageActiveState()
@@ -69,7 +72,7 @@ function addPage() {
 
 		PagesData.pages[input.value] = {
 			'background-color': 'white',
-			chlidren: [main_div_for_page()],
+			children: [main_div_for_page()],
 		}
 
 		setPageActiveState()

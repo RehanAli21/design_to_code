@@ -13,5 +13,4 @@ export const ElementTags = {
 	SELECT: 'select',
 	TEXT: 'text',
 	OPTION: 'option',
-	LINK: 'a',
 }

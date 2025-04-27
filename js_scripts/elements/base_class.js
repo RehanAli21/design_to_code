@@ -1,5 +1,5 @@
 class TagElement {
-	constructor(tagName, name, styles, id, classes, innerText, can_have_children) {
+	constructor(tagName, name, styles, id, classes, innerText, can_have_children, children) {
 		this.tagName = tagName
 		this.name = name
 		this.showChildrenInHeirarchy = false
@@ -7,6 +7,7 @@ class TagElement {
 		this.classes = classes ? classes : []
 		this.innerText = innerText ? innerText : ''
 		this.can_have_children = can_have_children ? can_have_children : false
+		this.children = children ? children : []
 		this.styles = styles
 			? styles
 			: {

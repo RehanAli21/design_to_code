@@ -1,5 +1,6 @@
 import { ElementData } from './data/element_data.js'
 import { showAvailableElements } from './show_elements_to_add.js'
+import { printCurrentPageHierarchy } from './show_elements_hierarchy.js'
 
 let prevActiveElementId = ''
 
@@ -23,5 +24,6 @@ export function changeActiveElement(e) {
 	ElementData.activeElementId = e.target.id
 
 	showAvailableElements()
+	printCurrentPageHierarchy()
 }
 document.getElementById('page').addEventListener('click', changeActiveElement)

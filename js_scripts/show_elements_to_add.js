@@ -7,8 +7,7 @@ const availableElementForAddingToOtherElement = {
 	BUTTON: [],
 	INPUT: [],
 	SELECT: [ElementTags.OPTION],
-	TEXT: [ElementTags.LINK],
-	LINK: [ElementTags.TEXT],
+	TEXT: [],
 	OPTION: [ElementTags.TEXT],
 }
 

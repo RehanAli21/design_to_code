@@ -7,5 +7,7 @@ export function main_div_for_page() {
 
 	const div = new Div(id, id)
 
+	i++
+
 	return div
 }

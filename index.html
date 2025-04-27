@@ -53,19 +53,26 @@
 					</div>
 					<div
 						class="top_border"
-						id="hierarchy_div"></div>
+						id="hierarchy_div">
+						<ul class="tree">
+							<li>
+								<p class="caret">Div</p>
+								<ul class="tree">
+									<li>Button</li>
+									<li>
+										<p class="caret">Text</p>
+										<ul class="tree">
+											<li>Link</li>
+											<li>Link</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
 					<div
 						class="top_border"
-						id="elements_div">
-						<!-- <button class="btn">Div</button>
-						<button class="btn">Button</button>
-						<button class="btn">Input</button>
-						<button class="btn">Checkbox</button>
-						<button class="btn">Radio</button>
-						<button class="btn">Select</button>
-						<button class="btn">List</button>
-						<button class="btn">File Input</button> -->
-					</div>
+						id="elements_div"></div>
 				</div>
 				<div id="page_viewer">
 					<div
@@ -110,6 +117,16 @@
 				</button>
 			</div>
 		</div>
+		<script>
+			const togglers = document.querySelectorAll('.caret')
+
+			togglers.forEach(toggler => {
+				toggler.addEventListener('click', function () {
+					this.parentElement.querySelector('.nested').classList.toggle('active')
+					this.classList.toggle('caret-down')
+				})
+			})
+		</script>
 		<script src="./js_scripts/change_theme.js"></script>
 		<script src="./js_scripts/drag_mode.js"></script>
 		<script src="./js_scripts/dialog_box_manager.js"></script>
