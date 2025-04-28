@@ -30,7 +30,8 @@ function createChildrenForHierarchy(children) {
 		p.id = 'point_' + child.id
 
 		if (child.id == ElementData.activeElementId) {
-			p.classList.add('primary-bg')
+			p.classList.add('primary-color')
+			p.classList.add('font-bold-700')
 		}
 
 		p.addEventListener('click', () => changeActiveElement(child.id))
