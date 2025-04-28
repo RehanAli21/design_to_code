@@ -15,9 +15,9 @@ export function showAvailableElements() {
 	const ele = document.getElementById('elements_div')
 
 	if (ele) {
+		ele.innerHTML = ''
 		const activeElement = document.getElementById(ElementData.activeElementId)
 		if (activeElement) {
-			ele.innerHTML = ''
 			for (let element of availableElementForAddingToOtherElement[activeElement.tagName]) {
 				const e = document.createElement('button')
 				e.innerText = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
