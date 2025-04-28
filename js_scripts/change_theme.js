@@ -1,7 +1,7 @@
 let theme = window.localStorage.getItem('theme')
 const themeToggler = document.getElementById('theme-toggle')
 
-themeToggler.textContent = theme && theme == 'dark' ? '🌞' : theme && theme == 'light' ? '🌙' : '🌙'
+themeToggler.textContent = theme && theme == 'dark' ? '\u2600' : theme && theme == 'light' ? '\u{1F319}' : '\u{1F319}'
 
 if (!theme) {
 	window.localStorage.setItem('theme', 'light')
@@ -47,9 +47,9 @@ themeToggler.addEventListener('click', () => {
 	changeTheme()
 
 	// Change button icon
-	if (themeToggler.textContent == '🌙') {
-		themeToggler.textContent = '🌞' // Light mode
+	if (themeToggler.textContent == '\u{1F319}') {
+		themeToggler.textContent = '\u2600' // Light mode
 	} else {
-		themeToggler.textContent = '🌙' // Dark mode
+		themeToggler.textContent = '\u{1F319}' // Dark mode
 	}
 })
