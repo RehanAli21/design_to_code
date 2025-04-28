@@ -50,7 +50,6 @@ function changeRootVars(theme) {
 }
 
 themeToggler.addEventListener('click', () => {
-	console.log('changing theme')
 	changeTheme()
 
 	// Change button icon

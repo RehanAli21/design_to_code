@@ -1,4 +1,6 @@
 import PagesData from './data/page_data.js'
+import { ElementData } from './data/element_data.js'
+import { changeActiveElement } from './element_manager.js'
 
 export function printCurrentPageHierarchy() {
 	const page = PagesData.pages[PagesData.activePage]
@@ -25,10 +27,17 @@ function createChildrenForHierarchy(children) {
 
 		p.innerText = child.name
 		p.classList.add('caret')
+		p.id = 'point_' + child.id
+
+		if (child.id == ElementData.activeElementId) {
+			p.classList.add('primary-bg')
+		}
+
+		p.addEventListener('click', () => changeActiveElement(child.id))
 
 		li.appendChild(p)
 
-		if (!child.can_have_children) {
+		if (child.can_have_children) {
 			const internal_child = createChildrenForHierarchy(child.children)
 
 			li.appendChild(internal_child)

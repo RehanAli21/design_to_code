@@ -22,7 +22,7 @@ export function showAvailableElements() {
 				const e = document.createElement('button')
 				e.innerText = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
 				e.classList.add('btn')
-				e.addEventListener('click', e => addElementInsideElement(e, element))
+				e.addEventListener('click', () => addElementInsideElement(element))
 				ele.appendChild(e)
 			}
 		}

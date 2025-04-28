@@ -1,0 +1,42 @@
+import PagesData from './data/page_data.js'
+
+export function printCurrentPageElements() {
+	const div = document.getElementById('page')
+	const page = PagesData.pages[PagesData.activePage]
+
+	if (div) {
+		div.innerHTML = ''
+
+		const children = creatChildrenForPage(page.children)
+
+		for (let child of children) {
+			div.appendChild(child)
+		}
+	}
+}
+
+function creatChildrenForPage(children) {
+	const children_element = []
+
+	for (let child of children) {
+		const ele = document.createElement(child.tagName)
+		ele.id = child.id
+		ele.innerText = child.innerText
+
+		for (let c in child.classes) {
+			ele.appendChild(c)
+		}
+
+		if (child.can_have_children) {
+			const internal_children = creatChildrenForPage(child.children)
+
+			for (let internal_child of internal_children) {
+				ele.appendChild(internal_child)
+			}
+		}
+
+		children_element.push(ele)
+	}
+
+	return children_element
+}

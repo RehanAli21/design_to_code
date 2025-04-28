@@ -1,11 +1,13 @@
 import Div from './div_element.js'
 
+const id_for_element = 'element_id_'
 let i = 0
 
 export function main_div_for_page() {
-	const id = 'main_div_for_page' + i
+	const id = id_for_element + i
+	const name = 'div_' + i
 
-	const div = new Div(id, id)
+	const div = new Div(name, id)
 
 	i++
 
