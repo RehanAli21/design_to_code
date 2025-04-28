@@ -31,9 +31,6 @@ function changeRootVars(theme) {
 		root.style.setProperty('--shade-six', '#525252')
 		root.style.setProperty('--text', '#06010d')
 		root.style.setProperty('--background', '#fdfdfd')
-		root.style.setProperty('--primary', '#6a1ce8')
-		root.style.setProperty('--secondary', '#f386aa')
-		root.style.setProperty('--accent', '#ed6052')
 	} else if (theme == 'dark') {
 		root.style.setProperty('--shade-one', '#1c1c1c')
 		root.style.setProperty('--shade-two', '#252525')
@@ -43,9 +40,6 @@ function changeRootVars(theme) {
 		root.style.setProperty('--shade-six', '#adadad')
 		root.style.setProperty('--text', '#f9fef2')
 		root.style.setProperty('--background', '#282828')
-		root.style.setProperty('--primary', '#6a1ce8')
-		root.style.setProperty('--secondary', '#f386aa')
-		root.style.setProperty('--accent', '#ed6052')
 	}
 }
 

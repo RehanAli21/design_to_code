@@ -1,3 +1,4 @@
+import { ElementData } from './data/element_data.js'
 import PagesData from './data/page_data.js'
 import { main_div_for_page } from './elements/basic_div.js'
 import { printCurrentPageHierarchy } from './show_elements_hierarchy.js'
@@ -10,6 +11,7 @@ const select = document.getElementById('select_active_page_select')
 select.addEventListener('change', e => {
 	PagesData.activePage = e.target.value
 
+	ElementData.activeElementId = ''
 	setPageActiveState()
 })
 
@@ -78,6 +80,7 @@ function addPage() {
 		}
 
 		setPageActiveState()
+		input.value = ''
 		alert('Page has been added')
 		return
 	}
