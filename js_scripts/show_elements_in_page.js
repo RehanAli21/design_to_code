@@ -1,4 +1,5 @@
 import PagesData from './data/page_data.js'
+import { ElementData } from './data/element_data.js'
 
 export function printCurrentPageElements() {
 	const div = document.getElementById('page')
@@ -22,6 +23,10 @@ function creatChildrenForPage(children) {
 		const ele = document.createElement(child.tagName)
 		ele.id = child.id
 		ele.innerText = child.innerText
+
+		if (ElementData.activeElementId == child.id) {
+			ele.classList.add('outlined')
+		}
 
 		for (let c in child.classes) {
 			ele.appendChild(c)
