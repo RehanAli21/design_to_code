@@ -5,6 +5,7 @@ import { printCurrentPageElements } from './show_elements_in_page.js'
 import PagesData from './data/page_data.js'
 
 import Div from './elements/div_element.js'
+import Button from './elements/button_element.js'
 
 const id_for_element = 'element_id_'
 let index_for_id = 100
@@ -18,6 +19,9 @@ export function addElementInsideElement(element) {
 		if (element == ElementTags.DIV) {
 			const div = new Div(name, id)
 			addIntoPagesData(ElementData.activeElementId, div, PagesData.pages[PagesData.activePage].children)
+		} else if (element == ElementTags.BUTTON) {
+			const button = new Button(name, id)
+			addIntoPagesData(ElementData.activeElementId, button, PagesData.pages[PagesData.activePage].children)
 		}
 
 		index_for_id++
