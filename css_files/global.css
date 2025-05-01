@@ -298,6 +298,7 @@ main {
 
 #hierarchy_div {
 	display: grid;
+	grid-template-rows: 30px auto;
 	padding-top: 10px;
 	background-color: var(--background);
 }

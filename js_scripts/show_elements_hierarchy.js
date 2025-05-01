@@ -12,7 +12,28 @@ export function printCurrentPageHierarchy() {
 
 		hierarchy_div.innerHTML = ''
 
-		hierarchy_div.appendChild(ele)
+		const p = document.createElement('p')
+
+		p.classList.add('caret')
+		p.id = 'point_page'
+
+		if ('page' == ElementData.activeElementId) {
+			p.classList.add('primary-color')
+			p.classList.add('font-bold-700')
+		}
+
+		p.addEventListener('click', () => changeActiveElement('page'))
+
+		p.innerText = PagesData.activePage.toUpperCase()
+
+		hierarchy_div.appendChild(p)
+
+		const ul = document.createElement('ul')
+		const li = document.createElement('li')
+		li.appendChild(ele)
+		ul.appendChild(li)
+
+		hierarchy_div.appendChild(ul)
 	}
 }
 

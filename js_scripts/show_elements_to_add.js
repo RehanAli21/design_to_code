@@ -9,6 +9,7 @@ const availableElementForAddingToOtherElement = {
 	SELECT: [ElementTags.OPTION],
 	TEXT: [],
 	OPTION: [ElementTags.TEXT],
+	PAGE: [ElementTags.DIV],
 }
 
 export function showAvailableElements() {
@@ -18,7 +19,9 @@ export function showAvailableElements() {
 		ele.innerHTML = ''
 		const activeElement = document.getElementById(ElementData.activeElementId)
 		if (activeElement) {
-			for (let element of availableElementForAddingToOtherElement[activeElement.tagName]) {
+			const activeElementTagName = ElementData.activeElementId == 'page' ? 'PAGE' : activeElement.tagName
+
+			for (let element of availableElementForAddingToOtherElement[activeElementTagName]) {
 				const e = document.createElement('button')
 				e.innerText = element.charAt(0).toUpperCase() + element.slice(1).toLowerCase()
 				e.classList.add('btn')

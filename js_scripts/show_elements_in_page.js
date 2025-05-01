@@ -10,6 +10,12 @@ export function printCurrentPageElements() {
 	if (div) {
 		div.innerHTML = ''
 
+		if (ElementData.activeElementId == 'page') {
+			div.classList.add('outlined')
+		} else {
+			div.classList.remove('outlined')
+		}
+
 		const children = creatChildrenForPage(page.children)
 
 		for (let child of children) {
