@@ -14,3 +14,17 @@ export const ElementTags = {
 	TEXT: 'text',
 	OPTION: 'option',
 }
+
+export const InputTypes = {
+	TEXT: 'text',
+	NUMBER: 'number',
+	CHECKBOX: 'checkbox',
+	RADIO: 'radio',
+	FILE: 'file',
+	COLOR: 'color',
+	DATE: 'date',
+	DATEANDTIME: 'datetime-local',
+	PASSWORD: 'password',
+	EMAIL: 'email',
+	RANGE: 'range',
+}

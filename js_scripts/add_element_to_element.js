@@ -6,6 +6,7 @@ import PagesData from './data/page_data.js'
 
 import Div from './elements/div_element.js'
 import Button from './elements/button_element.js'
+import Input from './elements/input_element.js'
 
 const id_for_element = 'element_id_'
 let index_for_id = 100
@@ -22,6 +23,9 @@ export function addElementInsideElement(element) {
 		} else if (element == ElementTags.BUTTON) {
 			const button = new Button(name, id)
 			addIntoPagesData(ElementData.activeElementId, button, PagesData.pages[PagesData.activePage].children)
+		} else if (element == ElementTags.INPUT) {
+			const input = new Input(name, id)
+			addIntoPagesData(ElementData.activeElementId, input, PagesData.pages[PagesData.activePage].children)
 		}
 
 		index_for_id++
