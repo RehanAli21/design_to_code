@@ -1,5 +1,6 @@
 import PagesData from './data/page_data.js'
 import { ElementData } from './data/element_data.js'
+import { changeActiveElement } from './element_manager.js'
 
 export function printCurrentPageElements() {
 	const div = document.getElementById('page')
@@ -31,6 +32,11 @@ function creatChildrenForPage(children) {
 		for (let c in child.classes) {
 			ele.appendChild(c)
 		}
+
+		ele.addEventListener('click', e => {
+			e.stopPropagation() // 🛑 Stops it from reaching parent
+			changeActiveElement(child.id)
+		})
 
 		if (child.can_have_children) {
 			const internal_children = creatChildrenForPage(child.children)
