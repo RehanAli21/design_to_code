@@ -1,6 +1,7 @@
 import PagesData from './data/page_data.js'
 import { ElementData } from './data/element_data.js'
 import { changeActiveElement } from './element_manager.js'
+import { ElementTags } from './data/enums.js'
 
 export function printCurrentPageElements() {
 	const div = document.getElementById('page')
@@ -24,6 +25,10 @@ function creatChildrenForPage(children) {
 		const ele = document.createElement(child.tagName)
 		ele.id = child.id
 		ele.innerText = child.innerText
+
+		// before adding in this function add attributes here and move to function
+		// because here you can see attributes correctly
+		specificAttributesForElements(ele, child)
 
 		if (ElementData.activeElementId == child.id) {
 			ele.classList.add('outlined')
@@ -50,4 +55,19 @@ function creatChildrenForPage(children) {
 	}
 
 	return children_element
+}
+
+function specificAttributesForElements(ele, child) {
+	if (child.tagName == ElementTags.INPUT) {
+		ele.type = child.type
+		ele.placeholder = child.placeholder
+		ele.defaultValue = child.defaultValue
+		ele.min = child.min
+		ele.max = child.max
+		ele.readonly = child.readonly
+		ele.disabled = child.disabled
+		ele.autocomplete = child.autocomplete
+	}
+
+	return ele
 }

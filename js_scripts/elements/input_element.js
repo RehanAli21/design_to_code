@@ -1,12 +1,12 @@
 import TagElement from './base_class.js'
-import { ElementTags } from '../data/enums.js'
+import { ElementTags, InputTypes } from '../data/enums.js'
 
 class Input extends TagElement {
 	constructor(name, id) {
 		super(ElementTags.INPUT, name, null, id, [], '', false, [])
-		this.type = 'text'
+		this.type = InputTypes.TEXT
 		this.placeholder = 'input'
-		this.defaultValue = null
+		this.defaultValue = ''
 		this.min = null
 		this.max = null
 		this.readonly = null
