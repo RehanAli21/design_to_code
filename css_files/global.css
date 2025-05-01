@@ -202,6 +202,17 @@ main {
 	min-width: 300px;
 	min-height: 300px;
 	background-color: white;
+	margin: unset !important;
+	padding: unset !important;
+	box-sizing: unset !important;
+}
+
+#page * {
+	margin: unset !important;
+	padding: unset !important;
+	box-sizing: unset !important;
+	color: initial !important;
+	background-color: transparent !important;
 }
 
 #left_sidebar {
