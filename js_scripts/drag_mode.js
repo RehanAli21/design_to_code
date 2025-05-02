@@ -1,6 +1,7 @@
 const box = document.getElementById('pages_container')
 const box_container = document.getElementById('page_viewer')
 
+let isCtrlPressed = false
 let move = false
 let oldX = 0
 let oldY = 0
@@ -13,8 +14,22 @@ function changeState() {
 	box.style.transform = `scale(${scale}) translate(${x_translate}px, ${y_translate}px)`
 }
 
+document.addEventListener('keydown', e => {
+	if (e.ctrlKey) {
+		isCtrlPressed = true
+	}
+})
+
+document.addEventListener('keyup', e => {
+	if (!e.ctrlKey) {
+		isCtrlPressed = false
+	}
+})
+
 box_container.addEventListener('mousedown', () => {
-	move = true
+	if (isCtrlPressed) {
+		move = true
+	}
 	box_container.style.cursor = 'grabbing'
 })
 
