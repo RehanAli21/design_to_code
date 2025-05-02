@@ -8,6 +8,7 @@ import { main_div_for_page } from './elements/basic_div.js'
 import Div from './elements/div_element.js'
 import Button from './elements/button_element.js'
 import Input from './elements/input_element.js'
+import Select from './elements/select_element.js'
 
 const id_for_element = 'element_id_'
 let index_for_id = 100
@@ -29,6 +30,9 @@ export function addElementInsideElement(element) {
 		} else if (element == ElementTags.INPUT) {
 			const input = new Input(name, id)
 			addIntoPagesData(ElementData.activeElementId, input, PagesData.pages[PagesData.activePage].children)
+		} else if (element == ElementTags.SELECT) {
+			const select = new Select(name, id)
+			addIntoPagesData(ElementData.activeElementId, select, PagesData.pages[PagesData.activePage].children)
 		}
 
 		index_for_id++
