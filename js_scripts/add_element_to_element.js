@@ -35,7 +35,7 @@ export function addElementInsideElement(element) {
 			const select = new Select(name, id)
 			addIntoPagesData(ElementData.activeElementId, select, PagesData.pages[PagesData.activePage].children)
 		} else if (element == ElementTags.OPTION) {
-			const option = new Option()
+			const option = new Option(name, id)
 			addIntoPagesData(ElementData.activeElementId, option, PagesData.pages[PagesData.activePage].children)
 		}
 
