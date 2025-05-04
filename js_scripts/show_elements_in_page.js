@@ -28,7 +28,15 @@ function creatChildrenForPage(children) {
 	const children_element = []
 
 	for (let child of children) {
-		const ele = document.createElement(child.tagName)
+		let tagName = ''
+
+		if (child.tagName == ElementTags.TEXT) {
+			tagName = child.type
+		} else {
+			tagName = child.tagName
+		}
+
+		const ele = document.createElement(tagName)
 		ele.id = child.id
 		ele.innerText = child.innerText
 
@@ -73,6 +81,10 @@ function specificAttributesForElements(ele, child) {
 		ele.readonly = child.readonly
 		ele.disabled = child.disabled
 		ele.autocomplete = child.autocomplete
+	} else if (child.tagName == ElementTags.TEXT) {
+		if (child.type == 'a') {
+			ele.href = child.href
+		}
 	}
 
 	return ele

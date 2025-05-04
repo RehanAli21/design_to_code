@@ -388,10 +388,12 @@ main {
 .select {
 	padding: 5px;
 	font-size: var(--font-size-one);
+	border-radius: 5px;
 }
 
 .input {
 	padding: 10px 15px;
+	border-radius: 5px;
 }
 
 .top_border {

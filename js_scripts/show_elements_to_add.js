@@ -19,7 +19,7 @@ export function showAvailableElements() {
 		ele.innerHTML = ''
 		const activeElement = document.getElementById(ElementData.activeElementId)
 		if (activeElement) {
-			const activeElementTagName = ElementData.activeElementId == 'page' ? 'PAGE' : activeElement.tagName
+			let activeElementTagName = getKeyForChildrenUsingTagName(activeElement.tagName)
 
 			for (let element of availableElementForAddingToOtherElement[activeElementTagName]) {
 				const e = document.createElement('button')
@@ -29,5 +29,15 @@ export function showAvailableElements() {
 				ele.appendChild(e)
 			}
 		}
+	}
+}
+
+function getKeyForChildrenUsingTagName(tagName) {
+	if (ElementData.activeElementId == 'page') {
+		return 'PAGE'
+	} else if (tagName == 'P' || tagName == 'H1' || tagName == 'H2' || tagName == 'H3' || tagName == 'H4' || tagName == 'H5' || tagName == 'A') {
+		return 'TEXT'
+	} else {
+		return tagName
 	}
 }

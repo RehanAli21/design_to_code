@@ -10,6 +10,7 @@ import Button from './elements/button_element.js'
 import Input from './elements/input_element.js'
 import Select from './elements/select_element.js'
 import Option from './elements/option_element.js'
+import Text from './elements/text_element.js'
 
 const id_for_element = 'element_id_'
 let index_for_id = 100
@@ -37,6 +38,9 @@ export function addElementInsideElement(element) {
 		} else if (element == ElementTags.OPTION) {
 			const option = new Option(name, id)
 			addIntoPagesData(ElementData.activeElementId, option, PagesData.pages[PagesData.activePage].children)
+		} else if (element == ElementTags.TEXT) {
+			const text = new Text(name, id)
+			addIntoPagesData(ElementData.activeElementId, text, PagesData.pages[PagesData.activePage].children)
 		}
 
 		index_for_id++
