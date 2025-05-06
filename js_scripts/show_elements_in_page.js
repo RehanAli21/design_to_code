@@ -1,7 +1,7 @@
 import PagesData from './data/page_data.js'
 import { ElementData } from './data/element_data.js'
 import { changeActiveElement } from './element_manager.js'
-import { ElementTags } from './data/enums.js'
+import { ElementTags, PageModes } from './data/enums.js'
 
 export function printCurrentPageElements() {
 	const div = document.getElementById('page')
@@ -39,6 +39,12 @@ function creatChildrenForPage(children) {
 		const ele = document.createElement(tagName)
 		ele.id = child.id
 		ele.innerText = child.innerText
+
+		const styles = getStyles(child)
+
+		for (const styleProperty in styles) {
+			ele.style[styleProperty] = styles[styleProperty]
+		}
 
 		// before adding in this function add attributes here and move to function
 		// because here you can see attributes correctly
@@ -88,4 +94,24 @@ function specificAttributesForElements(ele, child) {
 	}
 
 	return ele
+}
+
+function getStyles(child) {
+	let styles = {}
+
+	if (PagesData.stylesPerViewMode) {
+		if (PagesData.activePageWidthMode == PageModes.XSMALL) styles = child.styles.xsmall
+		else if (PagesData.activePageWidthMode == PageModes.SMALL) styles = child.styles.small
+		else if (PagesData.activePageWidthMode == PageModes.MEDIUM) styles = child.styles.medium
+		else if (PagesData.activePageWidthMode == PageModes.large) styles = child.styles.large
+		else if (PagesData.activePageWidthMode == PageModes.XLARGE) styles = child.styles.xlarge
+	} else {
+		if (PagesData.pageDefaultWidthModeStyle == PageModes.XSMALL) styles = child.styles.xsmall
+		else if (PagesData.pageDefaultWidthModeStyle == PageModes.SMALL) styles = child.styles.small
+		else if (PagesData.pageDefaultWidthModeStyle == PageModes.MEDIUM) styles = child.styles.medium
+		else if (PagesData.pageDefaultWidthModeStyle == PageModes.large) styles = child.styles.large
+		else if (PagesData.pageDefaultWidthModeStyle == PageModes.XLARGE) styles = child.styles.xlarge
+	}
+
+	return styles
 }

@@ -1,6 +1,7 @@
 import { ElementData } from '../../data/element_data.js'
 import { PageModes } from '../../data/enums.js'
 import PagesData from '../../data/page_data.js'
+import { printCurrentPageElements } from '../../show_elements_in_page.js'
 
 const widthInput = document.getElementById('transform_width_input')
 const widthSelect = document.getElementById('transform_width_select')
@@ -16,7 +17,32 @@ if (widthSelect) {
 }
 
 function saveDataIntoElement(e) {
-	console.log('save data', e.target.id)
+	replaceStylesInPage(null)
+
+	printCurrentPageElements()
+}
+
+function replaceStylesInPage(children) {
+	if (children == null || children == undefined) {
+		children = PagesData.pages[PagesData.activePage].children
+	}
+
+	for (let i = 0; i < children.length; i++) {
+		const child = children[i]
+
+		if (child.id == ElementData.activeElementId) {
+			child.styles = ElementData.styles
+			return true
+		}
+
+		if (child.can_have_children) {
+			if (replaceStylesInPage(child.children)) {
+				return true
+			}
+		}
+	}
+
+	return false
 }
 
 function changeElementWidth(e) {
@@ -24,11 +50,11 @@ function changeElementWidth(e) {
 		const newWith = `${widthInput.value}${widthSelect.value}`
 
 		if (PagesData.stylesPerViewMode) {
-			if (PagesData.pageWidthMode == PageModes.XSMALL) ElementData.styles.xsmall['width'] = newWith
-			else if (PagesData.pageWidthMode == PageModes.SMALL) ElementData.styles.small['width'] = newWith
-			else if (PagesData.pageWidthMode == PageModes.MEDIUM) ElementData.styles.medium['width'] = newWith
-			else if (PagesData.pageWidthMode == PageModes.large) ElementData.styles.large['width'] = newWith
-			else if (PagesData.pageWidthMode == PageModes.XLARGE) ElementData.styles.xLarge['width'] = newWith
+			if (PagesData.activePageWidthMode == PageModes.XSMALL) ElementData.styles.xsmall['width'] = newWith
+			else if (PagesData.activePageWidthMode == PageModes.SMALL) ElementData.styles.small['width'] = newWith
+			else if (PagesData.activePageWidthMode == PageModes.MEDIUM) ElementData.styles.medium['width'] = newWith
+			else if (PagesData.activePageWidthMode == PageModes.large) ElementData.styles.large['width'] = newWith
+			else if (PagesData.activePageWidthMode == PageModes.XLARGE) ElementData.styles.xLarge['width'] = newWith
 		} else {
 			for (const key in ElementData.styles) {
 				ElementData.styles[key]['width'] = newWith

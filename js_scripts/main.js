@@ -6,7 +6,7 @@ import { showAvailableElements } from './show_elements_to_add.js'
 function setPageState() {
 	const page = document.getElementById('page')
 
-	page.style.minWidth = PagesData.pageWidthMode + 'px'
+	page.style.minWidth = PagesData.activePageWidthMode + 'px'
 }
 
 export function reprintEveryThing() {
