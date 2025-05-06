@@ -3,6 +3,7 @@ import { showAvailableElements } from './show_elements_to_add.js'
 import { printCurrentPageHierarchy } from './show_elements_hierarchy.js'
 import { printCurrentPageElements } from './show_elements_in_page.js'
 import { reprintEveryThing } from './main.js'
+import PagesData from './data/page_data.js'
 
 // change active element and add outline on active element
 export function changeActiveElement(id) {
@@ -10,11 +11,34 @@ export function changeActiveElement(id) {
 
 	ElementData.activeElementId = id
 
+	const newActiveElementStyles = getStylesForActiveElement(id, PagesData.pages[PagesData.activePage].children)
+
+	if (newActiveElementStyles) {
+		ElementData.styles = newActiveElementStyles
+	}
+
 	showAvailableElements()
 	printCurrentPageHierarchy()
 	printCurrentPageElements()
 }
-// document.getElementById('page').addEventListener('click', changeActiveElement)
+
+function getStylesForActiveElement(id, children) {
+	for (let i = 0; i < children.length; i++) {
+		const child = children[i]
+
+		if (child.id == id) {
+			return child.styles
+		}
+
+		if (child.can_have_children) {
+			const newActiveElementStyles = getStylesForActiveElement(id, child.children)
+
+			if (newActiveElementStyles) return newActiveElementStyles
+		}
+	}
+
+	return null
+}
 
 function resetActiveElement() {
 	ElementData.activeElementId = ''
