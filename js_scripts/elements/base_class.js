@@ -11,6 +11,7 @@ class TagElement {
 		this.styles = styles
 			? styles
 			: {
+					xsmall: {},
 					small: {},
 					medium: {},
 					large: {},
