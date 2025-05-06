@@ -10,6 +10,7 @@ const PagesData = {
 	},
 	activePage: 'home',
 	pageWidthMode: PageModes.XSMALL,
+	stylesPerViewMode: false,
 }
 
 export default PagesData
