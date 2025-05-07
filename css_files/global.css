@@ -14,6 +14,9 @@
 	--danger-color: #ff4848;
 
 	--font-size-one: 1em;
+	--font-size-3_4: 0.75em;
+	--font-size-half: 0.5em;
+	--font-size-1_4: 0.25em;
 }
 
 * {
@@ -171,10 +174,11 @@ main {
 	text-align: center;
 	padding-top: 10px;
 	border-top: 1px solid rgba(0, 0, 0, 0.4);
+	padding-bottom: 10px;
 }
 
 #transform_section > h2 {
-	margin-top: 10px;
+	margin-top: 20px;
 	margin-left: 10%;
 }
 #transform_section > .property_section {
@@ -183,8 +187,11 @@ main {
 	margin: 20px auto;
 	grid-template-columns: 16% 60% 24%;
 }
+#transform_section > .property_section > label {
+	margin-top: 2px;
+}
 #transform_section > .property_section > select {
-	font-size: var(--font-size-half);
+	font-size: var(--font-size-3_4);
 }
 
 #page_viewer {
