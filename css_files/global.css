@@ -86,8 +86,23 @@ header {
 	height: 50px;
 }
 
+#navbar_icons {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	min-width: 70px;
+	justify-content: center;
+	align-items: center;
+}
+
+#styles_Per_View_Mode_Img {
+	width: 28px;
+	height: 28px;
+	border-radius: 2px;
+	padding: 2px;
+}
+
 .logo {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	font-weight: bold;
 }
 

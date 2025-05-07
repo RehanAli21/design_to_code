@@ -1,5 +1,8 @@
+import PagesData from './data/page_data.js'
+
 let theme = window.localStorage.getItem('theme')
 const themeToggler = document.getElementById('theme-toggle')
+const styles_Per_View_Mode_Toggler = document.getElementById('styles_Per_View_Mode_Img')
 
 themeToggler.textContent = theme && theme == 'dark' ? '\u2600' : theme && theme == 'light' ? '\u{1F319}' : '\u{1F319}'
 
@@ -31,6 +34,8 @@ function changeRootVars(theme) {
 		root.style.setProperty('--shade-six', '#525252')
 		root.style.setProperty('--text', '#06010d')
 		root.style.setProperty('--background', '#fdfdfd')
+
+		styles_Per_View_Mode_Toggler.src = PagesData.stylesPerViewMode ? './assets/white_responsive_icon.svg' : './assets/black_responsive_icon.svg'
 	} else if (theme == 'dark') {
 		root.style.setProperty('--shade-one', '#1c1c1c')
 		root.style.setProperty('--shade-two', '#252525')
@@ -40,6 +45,8 @@ function changeRootVars(theme) {
 		root.style.setProperty('--shade-six', '#adadad')
 		root.style.setProperty('--text', '#f9fef2')
 		root.style.setProperty('--background', '#282828')
+
+		styles_Per_View_Mode_Toggler.src = './assets/white_responsive_icon.svg'
 	}
 }
 

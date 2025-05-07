@@ -6,6 +6,9 @@ import { printCurrentPageElements } from './show_elements_in_page.js'
 
 const select_for_delete_page = document.getElementById('delete-page-select')
 const select = document.getElementById('select_active_page_select')
+const styles_Per_View_Mode_Toggler = document.getElementById('styles_Per_View_Mode_Img')
+
+changeStylesPerViewMode(false)
 
 // for changing active page
 select.addEventListener('change', e => {
@@ -105,3 +108,17 @@ function deletePage() {
 	}
 }
 document.getElementById('delete_page_btn').addEventListener('click', deletePage)
+
+function changeStylesPerViewMode(change) {
+	console.log(PagesData.stylesPerViewMode)
+	if (change) PagesData.stylesPerViewMode = !PagesData.stylesPerViewMode
+
+	let theme = window.localStorage.getItem('theme')
+
+	if (theme && theme == 'light') {
+		styles_Per_View_Mode_Toggler.src = PagesData.stylesPerViewMode ? './assets/white_responsive_icon.svg' : './assets/black_responsive_icon.svg'
+	}
+
+	styles_Per_View_Mode_Toggler.style.backgroundColor = PagesData.stylesPerViewMode ? 'var(--primary)' : ''
+}
+styles_Per_View_Mode_Toggler.addEventListener('click', () => changeStylesPerViewMode(true))
