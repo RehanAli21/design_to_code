@@ -110,7 +110,6 @@ function deletePage() {
 document.getElementById('delete_page_btn').addEventListener('click', deletePage)
 
 function changeStylesPerViewMode(change) {
-	console.log(PagesData.stylesPerViewMode)
 	if (change) PagesData.stylesPerViewMode = !PagesData.stylesPerViewMode
 
 	let theme = window.localStorage.getItem('theme')
@@ -120,5 +119,7 @@ function changeStylesPerViewMode(change) {
 	}
 
 	styles_Per_View_Mode_Toggler.style.backgroundColor = PagesData.stylesPerViewMode ? 'var(--primary)' : ''
+
+	if (change) printCurrentPageElements()
 }
 styles_Per_View_Mode_Toggler.addEventListener('click', () => changeStylesPerViewMode(true))
