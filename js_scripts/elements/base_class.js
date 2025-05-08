@@ -15,7 +15,7 @@ class TagElement {
 					small: {},
 					medium: {},
 					large: {},
-					xLarge: {},
+					xlarge: {},
 			  }
 	}
 }

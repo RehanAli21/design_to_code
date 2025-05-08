@@ -57,8 +57,8 @@ function changeElementWidth(e) {
 			if (PagesData.activePageWidthMode == PageModes.XSMALL) ElementData.styles.xsmall['width'] = newWith
 			else if (PagesData.activePageWidthMode == PageModes.SMALL) ElementData.styles.small['width'] = newWith
 			else if (PagesData.activePageWidthMode == PageModes.MEDIUM) ElementData.styles.medium['width'] = newWith
-			else if (PagesData.activePageWidthMode == PageModes.large) ElementData.styles.large['width'] = newWith
-			else if (PagesData.activePageWidthMode == PageModes.XLARGE) ElementData.styles.xLarge['width'] = newWith
+			else if (PagesData.activePageWidthMode == PageModes.LARGE) ElementData.styles.large['width'] = newWith
+			else if (PagesData.activePageWidthMode == PageModes.XLARGE) ElementData.styles.xlarge['width'] = newWith
 		}
 
 		const ele = document.getElementById(ElementData.activeElementId)

@@ -102,7 +102,7 @@ function getStyles(child) {
 	if (PagesData.activePageWidthMode == PageModes.XSMALL) styles = child.styles.xsmall
 	else if (PagesData.activePageWidthMode == PageModes.SMALL) styles = child.styles.small
 	else if (PagesData.activePageWidthMode == PageModes.MEDIUM) styles = child.styles.medium
-	else if (PagesData.activePageWidthMode == PageModes.large) styles = child.styles.large
+	else if (PagesData.activePageWidthMode == PageModes.LARGE) styles = child.styles.large
 	else if (PagesData.activePageWidthMode == PageModes.XLARGE) styles = child.styles.xlarge
 
 	return styles
