@@ -91,14 +91,27 @@ header {
 
 #navbar_icons {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	min-width: 70px;
+	grid-template-columns: 200px 50px 30px;
+	width: 300px;
+	gap: 10px;
 	justify-content: center;
 	align-items: center;
 }
 
+#width_mode_div {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	border: 1px solid var(--shade-six);
+}
+
+#width_mode_div .btn {
+	border: 1px solid var(--shade-six);
+	border-radius: 0px !important;
+	font-size: var(--font-size-3_4);
+}
+
 #styles_Per_View_Mode_Img {
-	width: 28px;
+	width: 100%;
 	height: 28px;
 	border-radius: 2px;
 	padding: 2px;
