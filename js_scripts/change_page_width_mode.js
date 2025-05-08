@@ -1,5 +1,6 @@
 import { PageModes } from './data/enums.js'
 import PagesData from './data/page_data.js'
+import { printCurrentPageElements } from './show_elements_in_page.js'
 
 const xsWidthBtn = document.getElementById('xs_width_mode')
 const sWidthBtn = document.getElementById('s_width_mode')
@@ -22,6 +23,7 @@ function changePageWidthMode(pageMode) {
 	page.style.minWidth = `${pageMode}px`
 
 	changeBtnColors(pageMode)
+	printCurrentPageElements()
 }
 
 function changeBtnColors(pageMode) {

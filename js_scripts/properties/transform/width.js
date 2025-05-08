@@ -49,16 +49,16 @@ function changeElementWidth(e) {
 	if (widthSelect) {
 		const newWith = `${widthInput.value}${widthSelect.value}`
 
-		if (PagesData.stylesPerViewMode) {
+		if (PagesData.applyStylesOnAllWdiths) {
+			for (const key in ElementData.styles) {
+				ElementData.styles[key]['width'] = newWith
+			}
+		} else {
 			if (PagesData.activePageWidthMode == PageModes.XSMALL) ElementData.styles.xsmall['width'] = newWith
 			else if (PagesData.activePageWidthMode == PageModes.SMALL) ElementData.styles.small['width'] = newWith
 			else if (PagesData.activePageWidthMode == PageModes.MEDIUM) ElementData.styles.medium['width'] = newWith
 			else if (PagesData.activePageWidthMode == PageModes.large) ElementData.styles.large['width'] = newWith
 			else if (PagesData.activePageWidthMode == PageModes.XLARGE) ElementData.styles.xLarge['width'] = newWith
-		} else {
-			for (const key in ElementData.styles) {
-				ElementData.styles[key]['width'] = newWith
-			}
 		}
 
 		const ele = document.getElementById(ElementData.activeElementId)

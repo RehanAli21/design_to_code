@@ -99,19 +99,11 @@ function specificAttributesForElements(ele, child) {
 function getStyles(child) {
 	let styles = {}
 
-	if (PagesData.stylesPerViewMode) {
-		if (PagesData.activePageWidthMode == PageModes.XSMALL) styles = child.styles.xsmall
-		else if (PagesData.activePageWidthMode == PageModes.SMALL) styles = child.styles.small
-		else if (PagesData.activePageWidthMode == PageModes.MEDIUM) styles = child.styles.medium
-		else if (PagesData.activePageWidthMode == PageModes.large) styles = child.styles.large
-		else if (PagesData.activePageWidthMode == PageModes.XLARGE) styles = child.styles.xlarge
-	} else {
-		if (PagesData.pageDefaultWidthModeStyle == PageModes.XSMALL) styles = child.styles.xsmall
-		else if (PagesData.pageDefaultWidthModeStyle == PageModes.SMALL) styles = child.styles.small
-		else if (PagesData.pageDefaultWidthModeStyle == PageModes.MEDIUM) styles = child.styles.medium
-		else if (PagesData.pageDefaultWidthModeStyle == PageModes.large) styles = child.styles.large
-		else if (PagesData.pageDefaultWidthModeStyle == PageModes.XLARGE) styles = child.styles.xlarge
-	}
+	if (PagesData.activePageWidthMode == PageModes.XSMALL) styles = child.styles.xsmall
+	else if (PagesData.activePageWidthMode == PageModes.SMALL) styles = child.styles.small
+	else if (PagesData.activePageWidthMode == PageModes.MEDIUM) styles = child.styles.medium
+	else if (PagesData.activePageWidthMode == PageModes.large) styles = child.styles.large
+	else if (PagesData.activePageWidthMode == PageModes.XLARGE) styles = child.styles.xlarge
 
 	return styles
 }

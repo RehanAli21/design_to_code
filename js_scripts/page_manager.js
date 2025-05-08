@@ -110,15 +110,17 @@ function deletePage() {
 document.getElementById('delete_page_btn').addEventListener('click', deletePage)
 
 function changeStylesPerViewMode(change) {
-	if (change) PagesData.stylesPerViewMode = !PagesData.stylesPerViewMode
+	if (change) PagesData.applyStylesOnAllWdiths = !PagesData.applyStylesOnAllWdiths
 
 	let theme = window.localStorage.getItem('theme')
 
 	if (theme && theme == 'light') {
-		styles_Per_View_Mode_Toggler.src = PagesData.stylesPerViewMode ? './assets/white_responsive_icon.svg' : './assets/black_responsive_icon.svg'
+		styles_Per_View_Mode_Toggler.src = PagesData.applyStylesOnAllWdiths
+			? './assets/white_responsive_icon.svg'
+			: './assets/black_responsive_icon.svg'
 	}
 
-	styles_Per_View_Mode_Toggler.style.backgroundColor = PagesData.stylesPerViewMode ? 'var(--primary)' : ''
+	styles_Per_View_Mode_Toggler.style.backgroundColor = PagesData.applyStylesOnAllWdiths ? 'var(--primary)' : ''
 
 	if (change) printCurrentPageElements()
 }

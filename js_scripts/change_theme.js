@@ -35,7 +35,9 @@ function changeRootVars(theme) {
 		root.style.setProperty('--text', '#06010d')
 		root.style.setProperty('--background', '#fdfdfd')
 
-		styles_Per_View_Mode_Toggler.src = PagesData.stylesPerViewMode ? './assets/white_responsive_icon.svg' : './assets/black_responsive_icon.svg'
+		styles_Per_View_Mode_Toggler.src = PagesData.applyStylesOnAllWdiths
+			? './assets/white_responsive_icon.svg'
+			: './assets/black_responsive_icon.svg'
 	} else if (theme == 'dark') {
 		root.style.setProperty('--shade-one', '#1c1c1c')
 		root.style.setProperty('--shade-two', '#252525')
