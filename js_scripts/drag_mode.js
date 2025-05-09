@@ -16,29 +16,23 @@ function changeState() {
 
 document.addEventListener('keydown', e => {
 	if (e.ctrlKey) {
-		isCtrlPressed = true
-	}
-})
-
-document.addEventListener('keyup', e => {
-	if (!e.ctrlKey) {
-		isCtrlPressed = false
+		isCtrlPressed = !isCtrlPressed
+		box_container.style.cursor = isCtrlPressed ? 'grab' : ''
 	}
 })
 
 box_container.addEventListener('mousedown', () => {
 	if (isCtrlPressed) {
 		move = true
+		box_container.style.cursor = 'grabbing'
 	}
-	box_container.style.cursor = 'grabbing'
 })
 
 function disableMovement() {
 	move = false
-	box_container.style.cursor = ''
 }
 box_container.addEventListener('mouseup', disableMovement)
-box_container.addEventListener('mouseleave', disableMovement)
+// box_container.addEventListener('mouseleave', disableMovement)
 
 function resetEveryThing() {
 	box.style.transform = ''

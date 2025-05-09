@@ -213,12 +213,8 @@ main {
 
 #page_viewer {
 	background-color: var(--shade-two);
-	cursor: grab;
 	position: relative;
 	overflow: hidden;
-}
-#page_viewer:active {
-	cursor: grabbing;
 }
 
 .draggable {
