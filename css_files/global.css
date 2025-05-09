@@ -193,6 +193,10 @@ main {
 #transform_section > h2 {
 	margin-top: 20px;
 	margin-left: 10%;
+	cursor: pointer;
+	display: grid;
+	grid-template-columns: 130px 20px;
+	align-items: center;
 }
 #transform_section > .property_section {
 	display: grid;
