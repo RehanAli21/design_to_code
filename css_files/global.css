@@ -17,6 +17,10 @@
 	--font-size-3_4: 0.75em;
 	--font-size-half: 0.5em;
 	--font-size-1_4: 0.25em;
+	--font-size-two: 2em;
+	--font-size-2-3_4: 1.75em;
+	--font-size-2-half: 1.5em;
+	--font-size-2-1_4: 1.25em;
 }
 
 * {
@@ -190,25 +194,33 @@ main {
 	padding-bottom: 10px;
 }
 
-#transform_section > h2 {
+.properties_div > h2 {
 	margin-top: 20px;
 	margin-left: 10%;
 	cursor: pointer;
 	display: grid;
-	grid-template-columns: 130px 20px;
 	align-items: center;
+	font-size: var(--font-size-2-half);
 }
-#transform_section > .property_section {
+.properties_div > .property_section {
 	display: grid;
 	width: 90%;
 	margin: 20px auto;
 	grid-template-columns: 16% 60% 24%;
 }
-#transform_section > .property_section > label {
+.properties_div > .property_section > label {
 	margin-top: 2px;
-}
-#transform_section > .property_section > select {
 	font-size: var(--font-size-3_4);
+}
+.properties_div > .property_section > input {
+	font-size: var(--font-size-3_4);
+	border: none;
+	border-bottom: 1px solid;
+}
+.properties_div > .property_section > select {
+	font-size: var(--font-size-3_4);
+	border: none;
+	border-bottom: 1px solid;
 }
 
 #page_viewer {
