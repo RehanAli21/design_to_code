@@ -14,6 +14,7 @@
 	--danger-color: #ff4848;
 
 	--font-size-one: 1em;
+	--font-size-1-9-1: 0.95em;
 	--font-size-3_4: 0.75em;
 	--font-size-half: 0.5em;
 	--font-size-1_4: 0.25em;
@@ -207,15 +208,20 @@ main {
 	width: 90%;
 	margin: 20px auto;
 	grid-template-columns: 16% 60% 24%;
+	align-content: center;
 }
 .properties_div > .property_section > label {
 	margin-top: 2px;
-	font-size: var(--font-size-3_4);
+	font-size: var(--font-size-1-9-1);
 }
 .properties_div > .property_section > input {
 	font-size: var(--font-size-3_4);
 	border: none;
 	border-bottom: 1px solid;
+}
+.properties_div > .property_section > input[type='color'] {
+	height: 38px;
+	border: none;
 }
 .properties_div > .property_section > select {
 	font-size: var(--font-size-3_4);
