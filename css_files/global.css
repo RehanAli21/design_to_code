@@ -219,10 +219,6 @@ main {
 	border: none;
 	border-bottom: 1px solid;
 }
-.properties_div > .property_section > input[type='color'] {
-	height: 38px;
-	border: none;
-}
 .properties_div > .property_section > select {
 	font-size: var(--font-size-3_4);
 	border: none;
