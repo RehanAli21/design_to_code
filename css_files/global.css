@@ -60,17 +60,16 @@ p {
 	background-color: transparent;
 }
 
-/* body {
-	background-color: var(--bg-color);
-} */
-
 #root {
 	display: grid;
 	grid-template-rows: 50px calc(100vh - 50px);
+	overflow: hidden !important;
 }
 
 body {
 	font-family: Arial, sans-serif;
+	height: 100vh;
+	overflow: hidden !important;
 }
 
 #theme-toggle {
@@ -175,14 +174,17 @@ nav input[type='checkbox'] {
 main {
 	display: grid;
 	grid-template-columns: 20vw auto 20vw;
+	overflow: hidden !important;
+	height: calc(100vh - 50px);
 }
 
 #right_sidebar {
 	/* background-color: var(--shade-one); */
 	box-shadow: 0px 5px 5px var(--shade-five);
+	height: calc(100vh - 50px) !important;
 	z-index: 1;
-	overflow-y: scroll;
-	overflow-x: hidden;
+	overflow-y: scroll !important;
+	overflow-x: hidden !important;
 }
 
 #right_sidebar > * {
