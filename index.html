@@ -224,7 +224,7 @@
 						</div>
 						<div
 							class="property_section"
-							style="grid-template-columns: 36% 40% 24%">
+							style="grid-template-columns: 45% 40% 20%">
 							<label class="input">Inner Space: </label
 							><input
 								class="input"
@@ -244,8 +244,8 @@
 						</div>
 						<div
 							class="property_section"
-							style="grid-template-columns: 36% 40% 24%">
-							<label class="input">Inner Space: </label
+							style="grid-template-columns: 45% 40% 20%">
+							<label class="input">Outer Space: </label
 							><input
 								class="input"
 								placeholder="Outer Space"
@@ -261,6 +261,76 @@
 								<option value="rem">REM</option>
 								<option value="em">EM</option>
 							</select>
+						</div>
+						<div>
+							<div style="display: grid; grid-template-columns: 7% 12% 30% 0%">
+								<span></span>
+								<input
+									placeholder="border-enable"
+									type="checkbox" />
+								<lable>Border</lable>
+							</div>
+							<div
+								class="property_section"
+								style="grid-template-columns: 24% 60% 12%">
+								<label class="input">Color: </label>
+								<select
+									class="select"
+									value="transparent"
+									id="appeareance_color_select">
+									<option value="transparent">Transparent</option>
+									<option value="custom">Custom</option>
+								</select>
+								<input
+									class="colorInput"
+									type="color"
+									style="height: 35px"
+									id="appeareance_border_color_input" />
+							</div>
+							<div
+								class="property_section"
+								style="grid-template-columns: 24% 60% 12%">
+								<label class="input">Size: </label>
+								<input
+									class="input"
+									type="number"
+									placeholder="border size"
+									id="appeareance_border_size_input" />
+							</div>
+							<div
+								class="property_section"
+								style="grid-template-columns: 24% 60% 12%">
+								<label class="input">Radius: </label>
+								<input
+									class="input"
+									type="number"
+									placeholder="border size"
+									id="appeareance_border_size_input" />
+							</div>
+							<div
+								class="property_section"
+								style="grid-template-columns: 24% 60% 12%">
+								<label class="input">Styles: </label>
+								<select
+									class="select"
+									value="solid"
+									id="appeareance_border_style_select">
+									<option value="solid">Solid</option>
+									<option value="inset">Inset</option>
+									<option value="outset">Outset</option>
+									<option value="ridge">Ridge</option>
+								</select>
+							</div>
+							<div
+								class="property_section"
+								style="grid-template-columns: 24% 15% 15% 15% 15% 15%">
+								<label class="input">Sides: </label>
+								<button id="appeareance_border_side_L">L</button>
+								<button id="appeareance_border_side_T">T</button>
+								<button id="appeareance_border_side_R">R</button>
+								<button id="appeareance_border_side_B">B</button>
+								<button id="appeareance_border_side_A">A</button>
+							</div>
 						</div>
 					</div>
 				</div>
