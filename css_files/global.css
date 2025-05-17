@@ -216,7 +216,7 @@ main {
 }
 
 .property_section label {
-	margin-top: 2px;
+	margin-top: 12px;
 	font-size: var(--font-size-1-9-1);
 }
 .property_section > input {
