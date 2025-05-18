@@ -34,7 +34,7 @@ function replaceStylesInPage(children) {
 
 export function changeElementStyle(styleValue, propertyInput, propertySelect) {
 	if (propertySelect && propertyInput) {
-		const newPropertyValue = `${propertyInput.value}${propertySelect.value}`
+		const newPropertyValue = `${propertyInput.value}${propertySelect != 'no_value' ? propertySelect.value : ''}`
 
 		if (PagesData.applyStylesOnAllWdiths) {
 			for (const key in ElementData.styles) {

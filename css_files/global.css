@@ -270,7 +270,7 @@ main {
 	padding: unset;
 	box-sizing: unset !important;
 	color: initial !important;
-	background-color: transparent !important;
+	background-color: transparent;
 }
 
 #left_sidebar {
