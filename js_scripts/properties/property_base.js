@@ -32,24 +32,32 @@ function replaceStylesInPage(children) {
 	return false
 }
 
-export function changeElementStyle(styleValue, propertyInput, propertySelect) {
+export function changeElementStyle(styleValues, propertyInput, propertySelect) {
 	if (propertySelect && propertyInput) {
 		const newPropertyValue = `${propertyInput.value}${propertySelect != 'no_value' ? propertySelect.value : ''}`
 
 		if (PagesData.applyStylesOnAllWdiths) {
 			for (const key in ElementData.styles) {
-				ElementData.styles[key][styleValue] = newPropertyValue
+				for (const styleValue of styleValues) {
+					ElementData.styles[key][styleValue] = newPropertyValue
+				}
 			}
 		} else {
-			if (PagesData.activePageWidthMode == PageModes.XSMALL) ElementData.styles.xsmall[styleValue] = newPropertyValue
-			else if (PagesData.activePageWidthMode == PageModes.SMALL) ElementData.styles.small[styleValue] = newPropertyValue
-			else if (PagesData.activePageWidthMode == PageModes.MEDIUM) ElementData.styles.medium[styleValue] = newPropertyValue
-			else if (PagesData.activePageWidthMode == PageModes.LARGE) ElementData.styles.large[styleValue] = newPropertyValue
-			else if (PagesData.activePageWidthMode == PageModes.XLARGE) ElementData.styles.xlarge[styleValue] = newPropertyValue
+			for (const styleValue of styleValues) {
+				if (PagesData.activePageWidthMode == PageModes.XSMALL) ElementData.styles.xsmall[styleValue] = newPropertyValue
+				else if (PagesData.activePageWidthMode == PageModes.SMALL) ElementData.styles.small[styleValue] = newPropertyValue
+				else if (PagesData.activePageWidthMode == PageModes.MEDIUM) ElementData.styles.medium[styleValue] = newPropertyValue
+				else if (PagesData.activePageWidthMode == PageModes.LARGE) ElementData.styles.large[styleValue] = newPropertyValue
+				else if (PagesData.activePageWidthMode == PageModes.XLARGE) ElementData.styles.xlarge[styleValue] = newPropertyValue
+			}
 		}
 
 		const ele = document.getElementById(ElementData.activeElementId)
 
-		if (ele) ele.style[styleValue] = newPropertyValue
+		if (ele) {
+			for (const styleValue of styleValues) {
+				ele.style[styleValue] = newPropertyValue
+			}
+		}
 	}
 }

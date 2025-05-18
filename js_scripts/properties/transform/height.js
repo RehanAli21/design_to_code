@@ -6,9 +6,9 @@ export default function setUpHeight() {
 
 	if (heightInput && heightSelect) {
 		heightInput.addEventListener('focusout', saveDataIntoElement)
-		heightInput.addEventListener('input', () => changeElementStyle('height', heightInput, heightSelect))
+		heightInput.addEventListener('input', () => changeElementStyle(['height'], heightInput, heightSelect))
 
 		heightSelect.addEventListener('focusout', saveDataIntoElement)
-		heightSelect.addEventListener('change', () => changeElementStyle('height', heightInput, heightSelect))
+		heightSelect.addEventListener('change', () => changeElementStyle(['height'], heightInput, heightSelect))
 	}
 }

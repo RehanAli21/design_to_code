@@ -6,9 +6,9 @@ export default function setUpWidth() {
 
 	if (widthInput && widthSelect) {
 		widthInput.addEventListener('focusout', saveDataIntoElement)
-		widthInput.addEventListener('input', () => changeElementStyle('width', widthInput, widthSelect))
+		widthInput.addEventListener('input', () => changeElementStyle(['width'], widthInput, widthSelect))
 
 		widthSelect.addEventListener('focusout', saveDataIntoElement)
-		widthSelect.addEventListener('change', () => changeElementStyle('width', widthInput, widthSelect))
+		widthSelect.addEventListener('change', () => changeElementStyle(['width'], widthInput, widthSelect))
 	}
 }

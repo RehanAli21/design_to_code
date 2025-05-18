@@ -6,9 +6,9 @@ export default function setUpMarginTop() {
 
 	if (marginTopInput && marginTopSelect) {
 		marginTopInput.addEventListener('focusout', saveDataIntoElement)
-		marginTopInput.addEventListener('input', () => changeElementStyle('marginTop', marginTopInput, marginTopSelect))
+		marginTopInput.addEventListener('input', () => changeElementStyle(['marginTop'], marginTopInput, marginTopSelect))
 
 		marginTopSelect.addEventListener('focusout', saveDataIntoElement)
-		marginTopSelect.addEventListener('change', () => changeElementStyle('marginTop', marginTopInput, marginTopSelect))
+		marginTopSelect.addEventListener('change', () => changeElementStyle(['marginTop'], marginTopInput, marginTopSelect))
 	}
 }
