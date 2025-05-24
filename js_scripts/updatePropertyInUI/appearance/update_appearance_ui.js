@@ -1,3 +1,4 @@
+import { toggleBorderStyles } from '../../properties/appearance/border.js'
 import { findStyleUsingSubstringWithNotFilter, getStyles, splitValue, splitValueIn3 } from '../updatePropertyUIUtils.js'
 
 export default function UpdateAppearnceUI() {
@@ -11,6 +12,11 @@ export default function UpdateAppearnceUI() {
 	const borderSizeInput = document.getElementById('appeareance_border_size_input')
 	const borderRadiusInput = document.getElementById('appeareance_border_radius_input')
 	const borderStyleSelect = document.getElementById('appeareance_border_style_select')
+	const borderLeftBtn = document.getElementById('appeareance_border_side_L')
+	const borderRightBtn = document.getElementById('appeareance_border_side_R')
+	const borderTopBtn = document.getElementById('appeareance_border_side_T')
+	const borderBottomBtn = document.getElementById('appeareance_border_side_B')
+	const borderAllBtn = document.getElementById('appeareance_border_side_A')
 
 	const styles = getStyles()
 
@@ -80,5 +86,46 @@ export default function UpdateAppearnceUI() {
 		borderRadiusInput.value = ''
 	}
 
-	borderToggler.checked = isBorderStylesPresent
+	// this is added because there is an evenet listener which add or remove border if borderToggle state change
+	if (borderToggler.checked != isBorderStylesPresent) {
+		borderToggler.checked = isBorderStylesPresent
+	}
+
+	let isAllBorderApplied = true
+
+	if (styles['border-left']) {
+		isAllBorderApplied = false
+		borderLeftBtn.style.backgroundColor = 'var(--primary)'
+	} else {
+		borderLeftBtn.style.backgroundColor = ''
+	}
+
+	if (styles['border-right']) {
+		isAllBorderApplied = false
+		borderRightBtn.style.backgroundColor = 'var(--primary)'
+	} else {
+		borderRightBtn.style.backgroundColor = ''
+	}
+
+	if (styles['border-top']) {
+		isAllBorderApplied = false
+		borderTopBtn.style.backgroundColor = 'var(--primary)'
+	} else {
+		borderTopBtn.style.backgroundColor = ''
+	}
+
+	if (styles['border-bottom']) {
+		isAllBorderApplied = false
+		borderBottomBtn.style.backgroundColor = 'var(--primary)'
+	} else {
+		borderBottomBtn.style.backgroundColor = ''
+	}
+
+	if (isAllBorderApplied) {
+		borderAllBtn.style.backgroundColor = 'var(--primary)'
+	} else {
+		borderAllBtn.style.backgroundColor = ''
+	}
+
+	toggleBorderStyles(borderToggler, isBorderStylesPresent)
 }
