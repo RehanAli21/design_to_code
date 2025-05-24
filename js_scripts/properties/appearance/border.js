@@ -138,7 +138,7 @@ function toggleBorderStyles(borderToggler) {
 		}
 	}
 
-	let borderValue = borderToggler.checked ? '1px solid black' : ''
+	let borderValue = borderToggler.checked ? '1px solid #000000' : ''
 
 	changeElementStyle(['border'], { value: borderValue }, 'no_value')
 }
