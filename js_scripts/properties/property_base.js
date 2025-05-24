@@ -64,14 +64,11 @@ export function changeElementStyle(styleValues, propertyInput, propertySelect) {
 
 export function removeElementStyle(styleValues) {
 	if (PagesData.applyStylesOnAllWdiths) {
-		console.log('removing')
-		console.log(ElementData.styles)
 		for (const key in ElementData.styles) {
 			for (const styleValue of styleValues) {
 				delete ElementData.styles[key][styleValue]
 			}
 		}
-		console.log(ElementData.styles)
 	} else {
 		for (const styleValue of styleValues) {
 			if (PagesData.activePageWidthMode == PageModes.XSMALL) delete ElementData.styles.xsmall[styleValue]
@@ -85,7 +82,6 @@ export function removeElementStyle(styleValues) {
 	const ele = document.getElementById(ElementData.activeElementId)
 
 	if (ele) {
-		console.log(styleValues)
 		for (const styleValue of styleValues) {
 			ele.style['border'] = ''
 		}

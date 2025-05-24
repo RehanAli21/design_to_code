@@ -20,10 +20,10 @@ export default function setUpBorder() {
 	if (borderToggler) {
 		borderToggler.addEventListener('focusout', saveDataIntoElement)
 
-		toggleBorderStyles(borderToggler)
+		toggleBorderStyles(borderToggler, borderToggler.checked)
 
 		borderToggler.addEventListener('change', () => {
-			toggleBorderStyles(borderToggler)
+			toggleBorderStyles(borderToggler, borderToggler.checked)
 		})
 	}
 
@@ -131,16 +131,20 @@ export default function setUpBorder() {
 	setButtonsBackgroundColor()
 }
 
-function toggleBorderStyles(borderToggler) {
+export function toggleBorderStyles(borderToggler, show) {
 	for (const child of borderToggler.parentElement.parentElement.children) {
 		if (child.classList.contains('property_section')) {
-			child.style.display = borderToggler.checked ? '' : 'none'
+			child.style.display = show ? '' : 'none'
 		}
 	}
 
-	let borderValue = borderToggler.checked ? '1px solid #000000' : ''
+	let borderValue = show ? '1px solid #000000' : ''
 
-	changeElementStyle(['border'], { value: borderValue }, 'no_value')
+	if (borderValue == '') {
+		removeAllBorderProperties()
+	} else {
+		changeElementStyle(['border'], { value: borderValue }, 'no_value')
+	}
 }
 
 function removeAllBorderProperties() {

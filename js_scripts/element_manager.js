@@ -16,6 +16,14 @@ export function changeActiveElement(id) {
 
 	if (newActiveElementStyles) {
 		ElementData.styles = newActiveElementStyles
+	} else {
+		ElementData.styles = {
+			xsmall: {},
+			small: {},
+			medium: {},
+			large: {},
+			xLarge: {},
+		}
 	}
 
 	showAvailableElements()
