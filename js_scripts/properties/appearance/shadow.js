@@ -1,4 +1,4 @@
-import { changeElementStyle, saveDataIntoElement } from '../property_base.js'
+import { changeElementStyle, removeElementStyle, saveDataIntoElement } from '../property_base.js'
 
 const shadowColorInput = document.getElementById('appeareance_shadow_color_input')
 const shadowXInput = document.getElementById('appeareance_shadow_x')
@@ -11,9 +11,9 @@ export default function setUpShadow() {
 	if (shadowToggler) {
 		shadowToggler.addEventListener('focusout', saveDataIntoElement)
 
-		toggleBorderStyles(shadowToggler)
+		toggleShadowStyles(shadowToggler, shadowToggler.checked)
 
-		shadowToggler.addEventListener('change', () => toggleBorderStyles(shadowToggler))
+		shadowToggler.addEventListener('change', () => toggleShadowStyles(shadowToggler, shadowToggler.checked))
 	}
 
 	if (shadowColorInput) {
@@ -22,7 +22,7 @@ export default function setUpShadow() {
 		shadowColorInput.addEventListener('input', () => {
 			const shadowValue = `${shadowXInput.value != '' ? shadowXInput.value : '1'}px ${shadowYInput.value != '' ? shadowYInput.value : '1'}px ${
 				shadowBlurInput.value != '' ? shadowBlurInput.value : '1'
-			}px ${shadowColorInput.value != '' ? shadowColorInput.value : 'black'}`
+			}px ${shadowColorInput.value != '' ? shadowColorInput.value : '#000000'}`
 			changeElementStyle(['box-shadow'], { value: shadowValue }, 'no_value')
 		})
 	}
@@ -33,7 +33,7 @@ export default function setUpShadow() {
 		shadowXInput.addEventListener('input', () => {
 			const shadowValue = `${shadowXInput.value != '' ? shadowXInput.value : '1'}px ${shadowYInput.value != '' ? shadowYInput.value : '1'}px ${
 				shadowBlurInput.value != '' ? shadowBlurInput.value : '1'
-			}px ${shadowColorInput.value != '' ? shadowColorInput.value : 'black'}`
+			}px ${shadowColorInput.value != '' ? shadowColorInput.value : '#000000'}`
 			changeElementStyle(['box-shadow'], { value: shadowValue }, 'no_value')
 		})
 	}
@@ -44,7 +44,7 @@ export default function setUpShadow() {
 		shadowYInput.addEventListener('input', () => {
 			const shadowValue = `${shadowXInput.value != '' ? shadowXInput.value : '1'}px ${shadowYInput.value != '' ? shadowYInput.value : '1'}px ${
 				shadowBlurInput.value != '' ? shadowBlurInput.value : '1'
-			}px ${shadowColorInput.value != '' ? shadowColorInput.value : 'black'}`
+			}px ${shadowColorInput.value != '' ? shadowColorInput.value : '#000000'}`
 			changeElementStyle(['box-shadow'], { value: shadowValue }, 'no_value')
 		})
 	}
@@ -55,24 +55,28 @@ export default function setUpShadow() {
 		shadowBlurInput.addEventListener('input', () => {
 			const shadowValue = `${shadowXInput.value != '' ? shadowXInput.value : '1'}px ${shadowYInput.value != '' ? shadowYInput.value : '1'}px ${
 				shadowBlurInput.value != '' ? shadowBlurInput.value : '1'
-			}px ${shadowColorInput.value != '' ? shadowColorInput.value : 'black'}`
+			}px ${shadowColorInput.value != '' ? shadowColorInput.value : '#000000'}`
 			changeElementStyle(['box-shadow'], { value: shadowValue }, 'no_value')
 		})
 	}
 }
 
-function toggleBorderStyles(shadowToggler) {
+export function toggleShadowStyles(shadowToggler, show) {
 	for (const child of shadowToggler.parentElement.parentElement.children) {
 		if (child.classList.contains('property_section')) {
-			child.style.display = shadowToggler.checked ? '' : 'none'
+			child.style.display = show ? '' : 'none'
 		}
 	}
 
-	const shadowValue = shadowToggler.checked
+	const shadowValue = show
 		? `${shadowXInput.value != '' ? shadowXInput.value : '1'}px ${shadowYInput.value != '' ? shadowYInput.value : '1'}px ${
 				shadowBlurInput.value != '' ? shadowBlurInput.value : '1'
-		  }px ${shadowColorInput.value != '' ? shadowColorInput.value : 'black'}`
+		  }px ${shadowColorInput.value != '' ? shadowColorInput.value : '#000000'}`
 		: ''
 
-	changeElementStyle(['box-shadow'], { value: shadowValue }, 'no_value')
+	if (shadowValue == '') {
+		removeElementStyle(['shadow'])
+	} else {
+		changeElementStyle(['box-shadow'], { value: shadowValue }, 'no_value')
+	}
 }

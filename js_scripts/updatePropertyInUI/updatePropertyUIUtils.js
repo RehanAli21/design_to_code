@@ -17,7 +17,7 @@ export function getStyles() {
 
 // this function splits without space, like 1px -> ["1", "px"]
 export function splitValue(value) {
-	const match = value.match(/^([0-9.]+)(px|%|em|rem)$/)
+	const match = value.match(/^(-?[0-9.]+)(px|%|em|rem)$/)
 	if (match) {
 		return {
 			number: parseFloat(match[1]),
@@ -34,6 +34,19 @@ export function splitValueIn3(value) {
 			first: values[0],
 			second: values[1],
 			third: values[2],
+		}
+	}
+	return null // or handle invalid input
+}
+
+export function splitValueIn4(value) {
+	const values = value.split(' ')
+	if (values.length > 3) {
+		return {
+			first: values[0],
+			second: values[1],
+			third: values[2],
+			fourth: values[3],
 		}
 	}
 	return null // or handle invalid input
