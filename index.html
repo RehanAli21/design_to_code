@@ -410,35 +410,46 @@
 						</div>
 						<div
 							class="property_section"
-							style="grid-template-columns: 10% 23% 10% 23% 10% 23%">
-							<label>L: </label>
-							<input
+							style="grid-template-columns: 50% 45%">
+							<label class="input">Letters Space:</label
+							><input
 								class="input"
+								placeholder="Letter Space"
 								type="number"
-								value="0"
-								id="text_letter_input" />
-							<label>W: </label>
-							<input
+								name="letter_space_input"
+								id="text_letter_space_input" />
+						</div>
+						<div
+							class="property_section"
+							style="grid-template-columns: 50% 45%">
+							<label class="input">Words Space:</label
+							><input
 								class="input"
+								placeholder="Words Space"
 								type="number"
-								value="0"
-								id="text_width_input" />
-							<label>H: </label>
-							<input
+								name="word_space_input"
+								id="text_word_space_input" />
+						</div>
+						<div
+							class="property_section"
+							style="grid-template-columns: 50% 45%">
+							<label class="input">Line Height:</label
+							><input
 								class="input"
+								placeholder="Line Height"
 								type="number"
-								value="0"
-								id="text_height_input" />
+								name="line_height_input"
+								id="text_line_height_input" />
 						</div>
 						<div
 							class="property_section"
 							style="grid-template-columns: 35% 15% 15% 15% 15%">
 							<label class="input">Transform: </label>
-							<button id="texr_transform_lower">tt</button>
-							<button id="texr_transform_capital">tT</button>
-							<button id="texr_transform_upper">TT</button>
+							<button id="text_transform_lower">tt</button>
+							<button id="text_transform_capital">tT</button>
+							<button id="text_transform_upper">TT</button>
 							<button
-								id="texr_transform_none"
+								id="text_transform_none"
 								style="font-weight: bolder">
 								-
 							</button>
@@ -555,11 +566,7 @@
 			src="./js_scripts/element_manager.js"></script>
 		<script
 			type="module"
-			src="./js_scripts/properties/transform/transform.js"></script>
-		<script
-			type="module"
-			src="./js_scripts/properties/appearance/appearance.js"></script>
-
+			src="./js_scripts/properties/propertiesSetup.js"></script>
 		<script
 			type="module"
 			src="./js_scripts/main.js"></script>

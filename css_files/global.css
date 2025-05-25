@@ -223,7 +223,6 @@ main {
 	font-size: var(--font-size-1-9-1);
 	height: 40px !important;
 	display: grid;
-	justify-content: center;
 	align-items: center;
 }
 .property_section input {
@@ -274,7 +273,7 @@ main {
 	margin: unset;
 	padding: unset;
 	box-sizing: unset !important;
-	color: initial !important;
+	color: initial;
 	background-color: transparent;
 }
 

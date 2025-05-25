@@ -3,7 +3,9 @@ import setUpMarginLeft from './margin_left.js'
 import setUpMarginTop from './margin_top.js'
 import setUpWidth from './width.js'
 
-setUpHeight()
-setUpWidth()
-setUpMarginLeft()
-setUpMarginTop()
+export default function setUpTransform() {
+	setUpHeight()
+	setUpWidth()
+	setUpMarginLeft()
+	setUpMarginTop()
+}
