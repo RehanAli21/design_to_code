@@ -2,7 +2,7 @@ import { toggleBorderStyles } from '../../properties/appearance/border.js'
 import { toggleShadowStyles } from '../../properties/appearance/shadow.js'
 import { findStyleUsingSubstringWithNotFilter, getStyles, splitValue, splitValueIn3, splitValueIn4 } from '../updatePropertyUIUtils.js'
 
-export default function UpdateAppearnceUI() {
+export default function updateAppearnceUI() {
 	const bgColorInput = document.getElementById('appeareance_color_input')
 	const innerXSpaceInput = document.getElementById('appeareance_inner_x_input')
 	const innerXSpaceSelect = document.getElementById('appeareance_inner_x_select')
