@@ -83,7 +83,7 @@ export function removeElementStyle(styleValues) {
 
 	if (ele) {
 		for (const styleValue of styleValues) {
-			ele.style['border'] = ''
+			ele.style[styleValue] = ''
 		}
 	}
 }

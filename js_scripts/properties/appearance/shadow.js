@@ -75,7 +75,7 @@ export function toggleShadowStyles(shadowToggler, show) {
 		: ''
 
 	if (shadowValue == '') {
-		removeElementStyle(['shadow'])
+		removeElementStyle(['box-shadow'])
 	} else {
 		changeElementStyle(['box-shadow'], { value: shadowValue }, 'no_value')
 	}
