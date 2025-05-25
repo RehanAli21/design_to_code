@@ -382,6 +382,116 @@
 							</div>
 						</div>
 					</div>
+					<div
+						id="text_section"
+						class="top_border bottom_border properties_div">
+						<h2
+							id="text_section_head"
+							style="grid-template-columns: 55px 30px">
+							Text <span style="font-size: medium">&#9660;</span>
+						</h2>
+						<div
+							class="property_section"
+							style="grid-template-columns: 36% 48% 12%">
+							<label class="input">Text Color: </label>
+							<select
+								disabled
+								class="select"
+								value="transparent"
+								id="text_color_select">
+								<option value="transparent">Transparent</option>
+								<option value="custom">Custom</option>
+							</select>
+							<input
+								class="colorInput"
+								type="color"
+								style="height: 35px"
+								id="text_color_input" />
+						</div>
+						<div
+							class="property_section"
+							style="grid-template-columns: 10% 23% 10% 23% 10% 23%">
+							<label>L: </label>
+							<input
+								class="input"
+								type="number"
+								value="0"
+								id="text_letter_input" />
+							<label>W: </label>
+							<input
+								class="input"
+								type="number"
+								value="0"
+								id="text_width_input" />
+							<label>H: </label>
+							<input
+								class="input"
+								type="number"
+								value="0"
+								id="text_height_input" />
+						</div>
+						<div
+							class="property_section"
+							style="grid-template-columns: 35% 15% 15% 15% 15%">
+							<label class="input">Transform: </label>
+							<button id="texr_transform_lower">tt</button>
+							<button id="texr_transform_capital">tT</button>
+							<button id="texr_transform_upper">TT</button>
+							<button
+								id="texr_transform_none"
+								style="font-weight: bolder">
+								-
+							</button>
+						</div>
+						<div>
+							<div style="display: grid; grid-template-columns: 7% 12% 30% 0%; margin-top: 30px">
+								<span></span>
+								<input
+									type="checkbox"
+									id="text_shadow_toggle" />
+								<lable>Shadow</lable>
+							</div>
+							<div
+								class="property_section"
+								style="grid-template-columns: 24% 60% 12%">
+								<label class="input">Color: </label>
+								<select
+									class="select"
+									value="transparent"
+									id="text_shadow_color_select">
+									<option value="transparent">Transparent</option>
+									<option value="custom">Custom</option>
+								</select>
+								<input
+									class="colorInput"
+									type="color"
+									style="height: 35px"
+									id="text_shadow_color_input" />
+							</div>
+							<div
+								class="property_section"
+								style="grid-template-columns: 10% 23% 10% 23% 10% 23%">
+								<label>X: </label>
+								<input
+									class="input"
+									type="number"
+									value="0"
+									id="text_shadow_x" />
+								<label>Y: </label>
+								<input
+									class="input"
+									type="number"
+									value="0"
+									id="text_shadow_y" />
+								<label>B: </label>
+								<input
+									class="input"
+									type="number"
+									value="0"
+									id="text_shadow_b" />
+							</div>
+						</div>
+					</div>
 				</div>
 			</main>
 		</div>

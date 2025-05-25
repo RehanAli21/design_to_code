@@ -220,18 +220,23 @@ main {
 }
 
 .property_section label {
-	margin-top: 12px;
 	font-size: var(--font-size-1-9-1);
+	height: 40px !important;
+	display: grid;
+	justify-content: center;
+	align-items: center;
 }
-.property_section > input {
+.property_section input {
 	font-size: var(--font-size-3_4);
 	border: none;
 	border-bottom: 1px solid;
+	height: 40px !important;
 }
 .property_section select {
 	font-size: var(--font-size-3_4);
 	border: none;
 	border-bottom: 1px solid;
+	height: 40px !important;
 }
 
 #page_viewer {
