@@ -5,6 +5,7 @@ import { printCurrentPageElements } from './show_elements_in_page.js'
 import { reprintEveryThing } from './main.js'
 import PagesData from './data/page_data.js'
 import mainUpdatePropertiesFunc from './updatePropertyInUI/updateProperties.js'
+import showAvailableProperties from './show_properties_for_element.js'
 
 // change active element and add outline on active element
 export function changeActiveElement(id) {
@@ -30,6 +31,7 @@ export function changeActiveElement(id) {
 	printCurrentPageHierarchy()
 	printCurrentPageElements()
 	mainUpdatePropertiesFunc()
+	showAvailableProperties()
 }
 
 function getStylesForActiveElement(id, children) {

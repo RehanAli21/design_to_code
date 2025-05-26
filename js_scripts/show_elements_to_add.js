@@ -32,7 +32,7 @@ export function showAvailableElements() {
 	}
 }
 
-function getKeyForChildrenUsingTagName(tagName) {
+export function getKeyForChildrenUsingTagName(tagName) {
 	if (ElementData.activeElementId == 'page') {
 		return 'PAGE'
 	} else if (tagName == 'P' || tagName == 'H1' || tagName == 'H2' || tagName == 'H3' || tagName == 'H4' || tagName == 'H5' || tagName == 'A') {

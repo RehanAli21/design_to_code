@@ -15,6 +15,18 @@ export const ElementTags = {
 	OPTION: 'option',
 }
 
+export const Properties = {
+	TRANSFORM: 'transform',
+	TEXT: 'text',
+	APPEARANCE: 'appearance',
+}
+
+export const PropertiesSectionIDs = {
+	transform: 'transform_section',
+	appearance: 'appeareance_section',
+	text: 'text_section',
+}
+
 export const InputTypes = {
 	TEXT: 'text',
 	NUMBER: 'number',
