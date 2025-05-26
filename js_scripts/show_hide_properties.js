@@ -1,11 +1,13 @@
 const transformSectionHead = document.getElementById('transform_section_head')
 const appearanceSectionHead = document.getElementById('appeareance_section_head')
 const textSectionHead = document.getElementById('text_section_head')
+const fontSectionHead = document.getElementById('font_section_head')
 
 const showProperties = {
 	transform: true,
 	appearance: true,
 	text: true,
+	font: true,
 }
 
 if (transformSectionHead) {
@@ -26,6 +28,13 @@ if (textSectionHead) {
 	toggleProperties(false, 'transform', 'text_section', ['property_section', 'property_section_no_class'], textSectionHead)
 	textSectionHead.addEventListener('click', () =>
 		toggleProperties(true, 'transform', 'text_section', ['property_section', 'property_section_no_class'], textSectionHead)
+	)
+}
+
+if (fontSectionHead) {
+	toggleProperties(false, 'transform', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
+	fontSectionHead.addEventListener('click', () =>
+		toggleProperties(true, 'transform', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
 	)
 }
 
