@@ -19,12 +19,14 @@ export const Properties = {
 	TRANSFORM: 'transform',
 	TEXT: 'text',
 	APPEARANCE: 'appearance',
+	FONT: 'font',
 }
 
 export const PropertiesSectionIDs = {
 	transform: 'transform_section',
 	appearance: 'appeareance_section',
 	text: 'text_section',
+	font: 'font_section',
 }
 
 export const InputTypes = {
