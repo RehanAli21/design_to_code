@@ -4,7 +4,7 @@ import { main_div_for_page } from '../elements/basic_div.js'
 const PagesData = {
 	pages: {
 		home: {
-			'background-color': 'white',
+			background_color: '#ffffff',
 			children: [main_div_for_page()],
 		},
 	},

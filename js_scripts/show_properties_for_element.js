@@ -9,7 +9,7 @@ const availablePropertiesForElements = {
 	SELECT: [Properties.TRANSFORM, Properties.APPEARANCE],
 	TEXT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXT, Properties.FONT],
 	OPTION: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT],
-	PAGE: [Properties.TRANSFORM, Properties.APPEARANCE],
+	PAGE: [Properties.PAGE],
 }
 
 export default function showAvailableProperties() {

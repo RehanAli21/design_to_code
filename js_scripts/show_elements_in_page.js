@@ -7,6 +7,8 @@ export function printCurrentPageElements() {
 	const div = document.getElementById('page')
 	const page = PagesData.pages[PagesData.activePage]
 
+	div.style.backgroundColor = page.background_color
+
 	if (div) {
 		div.innerHTML = ''
 

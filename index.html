@@ -117,6 +117,33 @@
 				<div id="right_sidebar">
 					<h3 class="heading">Properties</h3>
 					<div
+						id="page_section"
+						class="top_border bottom_border properties_div">
+						<h2
+							id="page_section_head"
+							style="grid-template-columns: 170px 30px">
+							Page Property <span style="font-size: medium">&#9660;</span>
+						</h2>
+						<div
+							class="property_section"
+							style="grid-template-columns: 36% 48% 12%">
+							<label class="input">BG Color: </label>
+							<select
+								disabled
+								class="select"
+								value="transparent"
+								id="page_color_select">
+								<option value="transparent">Transparent</option>
+								<option value="custom">Custom</option>
+							</select>
+							<input
+								class="colorInput"
+								type="color"
+								style="height: 35px"
+								id="page_color_input" />
+						</div>
+					</div>
+					<div
 						id="transform_section"
 						class="top_border bottom_border properties_div">
 						<h2
