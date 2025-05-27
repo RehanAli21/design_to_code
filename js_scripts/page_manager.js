@@ -3,6 +3,8 @@ import PagesData from './data/page_data.js'
 import { main_div_for_page } from './elements/basic_div.js'
 import { printCurrentPageHierarchy } from './show_elements_hierarchy.js'
 import { printCurrentPageElements } from './show_elements_in_page.js'
+import { showAvailableElements } from './show_elements_to_add.js'
+import showAvailableProperties from './show_properties_for_element.js'
 
 const select_for_delete_page = document.getElementById('delete-page-select')
 const select = document.getElementById('select_active_page_select')
@@ -57,6 +59,8 @@ function setPageActiveState() {
 
 	printCurrentPageHierarchy()
 	printCurrentPageElements()
+	showAvailableElements()
+	showAvailableProperties()
 }
 
 setPageActiveState()
