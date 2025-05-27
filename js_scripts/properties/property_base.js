@@ -62,6 +62,16 @@ export function changeElementStyle(styleValues, propertyInput, propertySelect) {
 	}
 }
 
+export function changePageStyle(color) {
+	PagesData.pages[PagesData.activePage]['background_color'] = color
+
+	const ele = document.getElementById(ElementData.activeElementId)
+
+	if (ele) {
+		ele.style.backgroundColor = color
+	}
+}
+
 export function removeElementStyle(styleValues) {
 	if (PagesData.applyStylesOnAllWdiths) {
 		for (const key in ElementData.styles) {

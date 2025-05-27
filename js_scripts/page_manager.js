@@ -78,7 +78,7 @@ function addPage() {
 		}
 
 		PagesData.pages[input.value] = {
-			'background-color': 'white',
+			'background-color': '#ffffff',
 			children: [main_div_for_page()],
 		}
 

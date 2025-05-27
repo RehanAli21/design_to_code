@@ -7,7 +7,7 @@ export function printCurrentPageElements() {
 	const div = document.getElementById('page')
 	const page = PagesData.pages[PagesData.activePage]
 
-	div.style.backgroundColor = page.background_color
+	div.style.backgroundColor = page['background_color'] ? page['background_color'] : '#ffffff'
 
 	if (div) {
 		div.innerHTML = ''
