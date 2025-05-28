@@ -5,10 +5,10 @@ const textSectionHead = document.getElementById('text_section_head')
 const fontSectionHead = document.getElementById('font_section_head')
 
 const showProperties = {
-	page: true,
-	transform: true,
-	appearance: true,
-	text: true,
+	page: false,
+	transform: false,
+	appearance: false,
+	text: false,
 	font: true,
 }
 
@@ -20,30 +20,30 @@ if (transformSectionHead) {
 }
 
 if (appearanceSectionHead) {
-	toggleProperties(false, 'transform', 'appeareance_section', ['property_section', 'property_section_no_class'], appearanceSectionHead)
+	toggleProperties(false, 'appearance', 'appeareance_section', ['property_section', 'property_section_no_class'], appearanceSectionHead)
 	appearanceSectionHead.addEventListener('click', () =>
-		toggleProperties(true, 'transform', 'appeareance_section', ['property_section', 'property_section_no_class'], appearanceSectionHead)
+		toggleProperties(true, 'appearance', 'appeareance_section', ['property_section', 'property_section_no_class'], appearanceSectionHead)
 	)
 }
 
 if (textSectionHead) {
-	toggleProperties(false, 'transform', 'text_section', ['property_section', 'property_section_no_class'], textSectionHead)
+	toggleProperties(false, 'text', 'text_section', ['property_section', 'property_section_no_class'], textSectionHead)
 	textSectionHead.addEventListener('click', () =>
-		toggleProperties(true, 'transform', 'text_section', ['property_section', 'property_section_no_class'], textSectionHead)
+		toggleProperties(true, 'text', 'text_section', ['property_section', 'property_section_no_class'], textSectionHead)
 	)
 }
 
 if (fontSectionHead) {
-	toggleProperties(false, 'transform', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
+	toggleProperties(false, 'font', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
 	fontSectionHead.addEventListener('click', () =>
-		toggleProperties(true, 'transform', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
+		toggleProperties(true, 'font', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
 	)
 }
 
 if (pageSectionHead) {
-	toggleProperties(false, 'transform', 'page_section', ['property_section', 'property_section_no_class'], pageSectionHead)
+	toggleProperties(false, 'page', 'page_section', ['property_section', 'property_section_no_class'], pageSectionHead)
 	pageSectionHead.addEventListener('click', () =>
-		toggleProperties(true, 'transform', 'page_section', ['property_section', 'property_section_no_class'], pageSectionHead)
+		toggleProperties(true, 'page', 'page_section', ['property_section', 'property_section_no_class'], pageSectionHead)
 	)
 }
 
