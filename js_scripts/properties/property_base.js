@@ -62,6 +62,24 @@ export function changeElementStyle(styleValues, propertyInput, propertySelect) {
 	}
 }
 
+export function findStyleInChild(styleValues, propertyInput, propertySelect) {
+	if (PagesData.applyStylesOnAllWdiths) {
+		for (const key in ElementData.styles) {
+			for (const styleValue of styleValues) {
+				ElementData.styles[key][styleValue] = newPropertyValue
+			}
+		}
+	} else {
+		for (const styleValue of styleValues) {
+			if (PagesData.activePageWidthMode == PageModes.XSMALL) ElementData.styles.xsmall[styleValue] = newPropertyValue
+			else if (PagesData.activePageWidthMode == PageModes.SMALL) ElementData.styles.small[styleValue] = newPropertyValue
+			else if (PagesData.activePageWidthMode == PageModes.MEDIUM) ElementData.styles.medium[styleValue] = newPropertyValue
+			else if (PagesData.activePageWidthMode == PageModes.LARGE) ElementData.styles.large[styleValue] = newPropertyValue
+			else if (PagesData.activePageWidthMode == PageModes.XLARGE) ElementData.styles.xlarge[styleValue] = newPropertyValue
+		}
+	}
+}
+
 export function changePageStyle(color) {
 	PagesData.pages[PagesData.activePage]['background_color'] = color
 
