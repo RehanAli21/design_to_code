@@ -5,10 +5,10 @@ import { getKeyForChildrenUsingTagName } from './show_elements_to_add.js'
 const availablePropertiesForElements = {
 	DIV: [Properties.TRANSFORM, Properties.APPEARANCE],
 	BUTTON: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT],
-	INPUT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT],
-	SELECT: [Properties.TRANSFORM, Properties.APPEARANCE],
+	INPUT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT],
+	SELECT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT],
 	TEXT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXT, Properties.FONT],
-	OPTION: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT],
+	OPTION: [Properties.APPEARANCE, Properties.TEXT],
 	PAGE: [Properties.PAGE],
 }
 
