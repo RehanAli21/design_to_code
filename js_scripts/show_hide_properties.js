@@ -3,13 +3,17 @@ const transformSectionHead = document.getElementById('transform_section_head')
 const appearanceSectionHead = document.getElementById('appeareance_section_head')
 const textSectionHead = document.getElementById('text_section_head')
 const fontSectionHead = document.getElementById('font_section_head')
+const textAlignSectionHead = document.getElementById('text_align_section_head')
+const selfAlignSectionHead = document.getElementById('self_align_section_head')
 
 const showProperties = {
 	page: false,
 	transform: false,
 	appearance: false,
 	text: false,
-	font: true,
+	font: false,
+	text_align: true,
+	self_align: true,
 }
 
 if (transformSectionHead) {
@@ -37,6 +41,21 @@ if (fontSectionHead) {
 	toggleProperties(false, 'font', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
 	fontSectionHead.addEventListener('click', () =>
 		toggleProperties(true, 'font', 'font_section', ['property_section', 'property_section_no_class'], fontSectionHead)
+	)
+}
+
+if (textAlignSectionHead) {
+	console.log('text alkiugn')
+	toggleProperties(false, 'text_align', 'text_align_section', ['property_section', 'property_section_no_class'], textAlignSectionHead)
+	textAlignSectionHead.addEventListener('click', () =>
+		toggleProperties(true, 'text_align', 'text_align_section', ['property_section', 'property_section_no_class'], textAlignSectionHead)
+	)
+}
+
+if (selfAlignSectionHead) {
+	toggleProperties(false, 'self_align', 'self_align_section', ['property_section', 'property_section_no_class'], selfAlignSectionHead)
+	selfAlignSectionHead.addEventListener('click', () =>
+		toggleProperties(true, 'self_align', 'self_align_section', ['property_section', 'property_section_no_class'], selfAlignSectionHead)
 	)
 }
 
