@@ -9,29 +9,29 @@ export default function setUpTextAlignment() {
 	textAlignLeftBtn.addEventListener('click', () => {
 		changeElementStyle(['text-align'], { value: 'left' }, 'no_value')
 		saveDataIntoElement()
-		setUpBtnBackground('left')
+		setUpTextAlignBtnBackground('left')
 	})
 
 	textAlignRightBtn.addEventListener('click', () => {
 		changeElementStyle(['text-align'], { value: 'right' }, 'no_value')
 		saveDataIntoElement()
-		setUpBtnBackground('right')
+		setUpTextAlignBtnBackground('right')
 	})
 
 	textAlignCenterBtn.addEventListener('click', () => {
 		changeElementStyle(['text-align'], { value: 'center' }, 'no_value')
 		saveDataIntoElement()
-		setUpBtnBackground('center')
+		setUpTextAlignBtnBackground('center')
 	})
 
 	textAlignJustifyBtn.addEventListener('click', () => {
 		changeElementStyle(['text-align'], { value: 'justify' }, 'no_value')
 		saveDataIntoElement()
-		setUpBtnBackground('justify')
+		setUpTextAlignBtnBackground('justify')
 	})
 }
 
-function setUpBtnBackground(currentAlignValue) {
+export function setUpTextAlignBtnBackground(currentAlignValue) {
 	if (currentAlignValue == 'left') {
 		textAlignLeftBtn.style.backgroundColor = 'var(--primary)'
 	} else {
