@@ -12,7 +12,7 @@ const showProperties = {
 	appearance: false,
 	text: false,
 	font: false,
-	text_align: true,
+	text_align: false,
 	self_align: true,
 }
 

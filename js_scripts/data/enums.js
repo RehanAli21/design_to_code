@@ -21,6 +21,7 @@ export const Properties = {
 	APPEARANCE: 'appearance',
 	FONT: 'font',
 	PAGE: 'page',
+	TEXTALIGN: 'text_align',
 }
 
 export const PropertiesSectionIDs = {
@@ -29,6 +30,7 @@ export const PropertiesSectionIDs = {
 	text: 'text_section',
 	font: 'font_section',
 	page: 'page_section',
+	text_align: 'text_align_section',
 }
 
 export const InputTypes = {
