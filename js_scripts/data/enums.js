@@ -22,6 +22,7 @@ export const Properties = {
 	FONT: 'font',
 	PAGE: 'page',
 	TEXTALIGN: 'text_align',
+	SLEFALIGN: 'self_align',
 }
 
 export const PropertiesSectionIDs = {
@@ -31,6 +32,7 @@ export const PropertiesSectionIDs = {
 	font: 'font_section',
 	page: 'page_section',
 	text_align: 'text_align_section',
+	self_align: 'self_align_section',
 }
 
 export const InputTypes = {
