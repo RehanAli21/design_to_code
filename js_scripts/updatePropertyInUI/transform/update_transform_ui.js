@@ -39,8 +39,8 @@ export default function updateTransformsUI() {
 		heightSelect.value = 'px'
 	}
 
-	if (styles['marginLeft']) {
-		const value = splitValue(styles['marginLeft'])
+	if (styles['margin-left'] && styles['margin-left'] != 'auto') {
+		const value = splitValue(styles['margin-left'])
 
 		if (value != null) {
 			marginLeftInput.value = value.number
@@ -51,8 +51,8 @@ export default function updateTransformsUI() {
 		marginLeftSelect.value = 'px'
 	}
 
-	if (styles['marginTop']) {
-		const value = splitValue(styles['marginTop'])
+	if (styles['margin-top']) {
+		const value = splitValue(styles['margin-top'])
 
 		if (value != null) {
 			marginTopInput.value = value.number

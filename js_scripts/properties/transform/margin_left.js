@@ -6,9 +6,9 @@ export default function setUpMarginLeft() {
 
 	if (marginLeftInput && marginLeftSelect) {
 		marginLeftInput.addEventListener('focusout', saveDataIntoElement)
-		marginLeftInput.addEventListener('input', () => changeElementStyle(['marginLeft'], marginLeftInput, marginLeftSelect))
+		marginLeftInput.addEventListener('input', () => changeElementStyle(['margin-left'], marginLeftInput, marginLeftSelect))
 
 		marginLeftSelect.addEventListener('focusout', saveDataIntoElement)
-		marginLeftSelect.addEventListener('change', () => changeElementStyle(['marginLeft'], marginLeftInput, marginLeftSelect))
+		marginLeftSelect.addEventListener('change', () => changeElementStyle(['margin-left'], marginLeftInput, marginLeftSelect))
 	}
 }

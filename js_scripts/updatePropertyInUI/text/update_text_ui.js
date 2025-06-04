@@ -62,7 +62,6 @@ function updateShadow(styles) {
 			const xValues = splitValue(values.first)
 
 			if (xValues != null) {
-				console.log(shadowXInput, xValues)
 				shadowXInput.value = xValues.number
 			} else {
 				shadowXInput.value = ''

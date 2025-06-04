@@ -45,7 +45,6 @@ if (fontSectionHead) {
 }
 
 if (textAlignSectionHead) {
-	console.log('text alkiugn')
 	toggleProperties(false, 'text_align', 'text_align_section', ['property_section', 'property_section_no_class'], textAlignSectionHead)
 	textAlignSectionHead.addEventListener('click', () =>
 		toggleProperties(true, 'text_align', 'text_align_section', ['property_section', 'property_section_no_class'], textAlignSectionHead)
