@@ -106,6 +106,11 @@ function deletePage() {
 			if (PagesData.pages.hasOwnProperty(select_for_delete_page.value)) {
 				delete PagesData.pages[select_for_delete_page.value]
 
+				for (const key in PagesData.pages) {
+					PagesData.activePage = key
+					break
+				}
+
 				setPageActiveState()
 			}
 		}
