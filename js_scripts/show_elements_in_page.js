@@ -69,6 +69,13 @@ function creatChildrenForPage(children) {
 			const internal_children = creatChildrenForPage(child.children)
 
 			for (let internal_child of internal_children) {
+				// this is required to assign options same color as select so,
+				// that user does not have to assign color to each option for select
+				// if current ele is "select" and then setting every "option" child element color same as select color
+				if (ele.tagName == 'SELECT' && internal_child.tagName == 'OPTION') {
+					internal_child.style.color = ele.style.color
+				}
+
 				ele.appendChild(internal_child)
 			}
 		}

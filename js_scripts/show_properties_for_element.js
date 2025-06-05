@@ -8,7 +8,7 @@ const availablePropertiesForElements = {
 	INPUT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT, Properties.TEXTALIGN],
 	SELECT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT, Properties.TEXTALIGN],
 	TEXT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXT, Properties.FONT, Properties.TEXTALIGN, Properties.SLEFALIGN],
-	OPTION: [Properties.APPEARANCE, Properties.TEXT],
+	OPTION: [],
 	PAGE: [Properties.PAGE],
 }
 
