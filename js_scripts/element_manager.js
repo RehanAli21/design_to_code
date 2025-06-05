@@ -13,10 +13,11 @@ export function changeActiveElement(id) {
 
 	ElementData.activeElementId = id
 
-	const newActiveElementStyles = getStylesForActiveElement(id, PagesData.pages[PagesData.activePage].children)
+	const newActiveElementData = getDataFromActiveElement(id, PagesData.pages[PagesData.activePage].children)
 
-	if (newActiveElementStyles) {
-		ElementData.styles = newActiveElementStyles
+	if (newActiveElementData) {
+		ElementData.styles = newActiveElementData.styles
+		ElementData.innerText = newActiveElementData.innerText
 	} else {
 		ElementData.styles = {
 			xsmall: {},
@@ -25,6 +26,7 @@ export function changeActiveElement(id) {
 			large: {},
 			xLarge: {},
 		}
+		ElementData.innerText = ''
 	}
 
 	showAvailableElements()
@@ -34,16 +36,16 @@ export function changeActiveElement(id) {
 	showAvailableProperties()
 }
 
-function getStylesForActiveElement(id, children) {
+function getDataFromActiveElement(id, children) {
 	for (let i = 0; i < children.length; i++) {
 		const child = children[i]
 
 		if (child.id == id) {
-			return child.styles
+			return { styles: child.styles, innerText: child.innerText }
 		}
 
 		if (child.can_have_children) {
-			const newActiveElementStyles = getStylesForActiveElement(id, child.children)
+			const newActiveElementStyles = getDataFromActiveElement(id, child.children)
 
 			if (newActiveElementStyles) return newActiveElementStyles
 		}

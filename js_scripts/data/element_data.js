@@ -7,4 +7,5 @@ export const ElementData = {
 		large: {},
 		xLarge: {},
 	},
+	innerText: '',
 }
