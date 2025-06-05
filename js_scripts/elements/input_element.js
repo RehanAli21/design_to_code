@@ -3,7 +3,15 @@ import { ElementTags, InputTypes } from '../data/enums.js'
 
 class Input extends TagElement {
 	constructor(name, id) {
-		super(ElementTags.INPUT, name, null, id, [], '', false, [])
+		const styles = {
+			xsmall: { border: '1px solid black' },
+			small: { border: '1px solid black' },
+			medium: { border: '1px solid black' },
+			large: { border: '1px solid black' },
+			xlarge: { border: '1px solid black' },
+		}
+
+		super(ElementTags.INPUT, name, styles, id, [], '', false, [])
 		this.type = InputTypes.TEXT
 		this.placeholder = 'input'
 		this.defaultValue = ''

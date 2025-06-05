@@ -277,6 +277,10 @@ main {
 	background-color: transparent;
 }
 
+#page input {
+	border: none;
+}
+
 #left_sidebar {
 	background-color: var(--shade-one);
 	box-shadow: 0px 5px 5px var(--shade-five);
