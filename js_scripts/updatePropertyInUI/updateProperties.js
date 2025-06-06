@@ -1,5 +1,6 @@
 import updateAppearnceUI from './appearance/update_appearance_ui.js'
 import updateFontUI from './font/update_font_ui.js'
+import updateIndividualPropertyUI from './individual/update_individual_ui.js'
 import updatePageUI from './page/update_page_ui.js'
 import updateSelfAlignUI from './selfAlign/update_self_align_UI.js'
 import updateTextUI from './text/update_text_ui.js'
@@ -14,4 +15,5 @@ export default function mainUpdatePropertiesFunc() {
 	updatePageUI()
 	updateTextAlignUI()
 	updateSelfAlignUI()
+	updateIndividualPropertyUI()
 }
