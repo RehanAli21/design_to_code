@@ -387,8 +387,14 @@ main {
 }
 
 .tree li {
-	padding-bottom: 5px;
-	padding-left: 15px;
+	padding-left: 5px;
+}
+
+.tree li > *:not(ul) {
+	background-color: var(--accent);
+	padding-left: 5px;
+	width: 200px;
+	max-width: 200px;
 }
 
 .tree {
@@ -396,7 +402,7 @@ main {
 	color: var(--text);
 	/* padding-top: px; */
 	display: grid;
-	width: 100%;
+	width: max-content;
 }
 
 .caret {

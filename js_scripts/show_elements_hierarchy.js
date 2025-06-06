@@ -49,21 +49,23 @@ function createChildrenForHierarchy(children) {
 		div.style.display = 'grid'
 		div.style.gridTemplateColumns = '20px auto'
 
-		if (child.can_have_children) {
-			const button = document.createElement('button')
+		const button = document.createElement('button')
 
+		if (child.can_have_children) {
 			button.innerText = child.showChildrenInHeirarchy ? '\u25BC' : '\u25BA'
+
+			button.style.fontSize = '10px'
 
 			button.addEventListener('click', () => {
 				toggleShowChildrenInHierarchy(child.id, null)
 				printCurrentPageHierarchy()
 			})
-
-			button.style.border = 'none'
-			button.style.cursor = 'pointer'
-
-			div.appendChild(button)
 		}
+
+		button.style.border = 'none'
+		button.style.cursor = 'pointer'
+
+		div.appendChild(button)
 
 		const p = document.createElement('p')
 
@@ -78,6 +80,8 @@ function createChildrenForHierarchy(children) {
 		p.addEventListener('click', () => changeActiveElement(child.id))
 
 		p.innerText = child.name
+		p.style.backgroundColor = 'var(--background)'
+		p.style.marginLeft = '-5px'
 		div.appendChild(p)
 
 		li.appendChild(div)
