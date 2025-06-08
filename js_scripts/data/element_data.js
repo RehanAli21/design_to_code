@@ -1,3 +1,5 @@
+import { InputTypes } from './enums.js'
+
 export const ElementData = {
 	activeElementId: '',
 	styles: {
@@ -9,4 +11,5 @@ export const ElementData = {
 	},
 	innerText: '',
 	placeholder: '',
+	inputType: InputTypes.TEXT,
 }
