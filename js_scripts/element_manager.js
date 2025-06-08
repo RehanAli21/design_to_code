@@ -18,6 +18,7 @@ export function changeActiveElement(id) {
 	if (newActiveElementData) {
 		ElementData.styles = newActiveElementData.styles
 		ElementData.innerText = newActiveElementData.innerText
+		ElementData.placeholder = newActiveElementData.placeholder
 	} else {
 		ElementData.styles = {
 			xsmall: {},
@@ -41,7 +42,8 @@ function getDataFromActiveElement(id, children) {
 		const child = children[i]
 
 		if (child.id == id) {
-			return { styles: child.styles, innerText: child.innerText }
+			const attributes = { styles: child.styles, innerText: child.innerText, placeholder: child.placeholder ? child.placeholder : '' }
+			return attributes
 		}
 
 		if (child.can_have_children) {
