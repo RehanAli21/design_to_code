@@ -88,7 +88,7 @@ function creatChildrenForPage(children) {
 
 function specificAttributesForElements(ele, child) {
 	if (child.tagName == ElementTags.INPUT) {
-		ele.type = child.type
+		ele.type = child.inputType
 		ele.placeholder = child.placeholder
 		ele.defaultValue = child.defaultValue
 		ele.min = child.min

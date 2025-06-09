@@ -12,7 +12,7 @@ class Input extends TagElement {
 		}
 
 		super(ElementTags.INPUT, name, styles, id, [], '', false, [])
-		this.type = InputTypes.TEXT
+		this.inputType = InputTypes.TEXT
 		this.placeholder = 'input'
 		this.defaultValue = ''
 		this.min = null

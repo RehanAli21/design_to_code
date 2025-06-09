@@ -26,8 +26,8 @@ function saveInputType(children) {
 	for (let i = 0; i < children.length; i++) {
 		const child = children[i]
 
-		if (child.id == ElementData.activeElementId && child.type) {
-			child.type = ElementData.inputType
+		if (child.id == ElementData.activeElementId && child.inputType) {
+			child.inputType = ElementData.inputType
 			return true
 		}
 
