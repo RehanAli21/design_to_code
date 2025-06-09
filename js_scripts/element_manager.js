@@ -6,6 +6,7 @@ import { reprintEveryThing } from './main.js'
 import PagesData from './data/page_data.js'
 import mainUpdatePropertiesFunc from './updatePropertyInUI/updateProperties.js'
 import showAvailableProperties from './show_properties_for_element.js'
+import { InputTypes } from './data/enums.js'
 
 // change active element and add outline on active element
 export function changeActiveElement(id) {
@@ -19,6 +20,7 @@ export function changeActiveElement(id) {
 		ElementData.styles = newActiveElementData.styles
 		ElementData.innerText = newActiveElementData.innerText
 		ElementData.placeholder = newActiveElementData.placeholder
+		ElementData.inputType = newActiveElementData.inputType
 	} else {
 		ElementData.styles = {
 			xsmall: {},
@@ -28,6 +30,8 @@ export function changeActiveElement(id) {
 			xLarge: {},
 		}
 		ElementData.innerText = ''
+		ElementData.placeholder = ''
+		ElementData.inputType = InputTypes.TEXT
 	}
 
 	showAvailableElements()
@@ -42,7 +46,12 @@ function getDataFromActiveElement(id, children) {
 		const child = children[i]
 
 		if (child.id == id) {
-			const attributes = { styles: child.styles, innerText: child.innerText, placeholder: child.placeholder ? child.placeholder : '' }
+			const attributes = {
+				styles: child.styles,
+				innerText: child.innerText,
+				placeholder: child.placeholder ? child.placeholder : '',
+				inputType: child.inputType ? child.inputType : InputTypes.TEXT,
+			}
 			return attributes
 		}
 
