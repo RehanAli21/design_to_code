@@ -4,11 +4,28 @@ import { getKeyForChildrenUsingTagName } from './show_elements_to_add.js'
 
 const availablePropertiesForElements = {
 	DIV: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXTALIGN, Properties.SLEFALIGN],
-	BUTTON: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXTALIGN],
-	INPUT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT, Properties.TEXTALIGN],
+	BUTTON: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXTALIGN, Properties.I_TEXT],
+	INPUT: [
+		Properties.TRANSFORM,
+		Properties.APPEARANCE,
+		Properties.FONT,
+		Properties.TEXT,
+		Properties.TEXTALIGN,
+		Properties.I_PLACEHOLDER,
+		,
+		Properties.I_INPUT_TYPE,
+	],
 	SELECT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT, Properties.TEXTALIGN],
-	TEXT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXT, Properties.FONT, Properties.TEXTALIGN, Properties.SLEFALIGN],
-	OPTION: [],
+	TEXT: [
+		Properties.TRANSFORM,
+		Properties.APPEARANCE,
+		Properties.TEXT,
+		Properties.FONT,
+		Properties.TEXTALIGN,
+		Properties.SLEFALIGN,
+		Properties.I_TEXT,
+	],
+	OPTION: [Properties.I_TEXT],
 	PAGE: [Properties.PAGE],
 }
 

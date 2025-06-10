@@ -23,6 +23,9 @@ export const Properties = {
 	PAGE: 'page',
 	TEXTALIGN: 'text_align',
 	SLEFALIGN: 'self_align',
+	I_TEXT: 'i_text',
+	I_PLACEHOLDER: 'i_placeholder',
+	I_INPUT_TYPE: 'i_input_type',
 }
 
 export const PropertiesSectionIDs = {
@@ -33,6 +36,9 @@ export const PropertiesSectionIDs = {
 	page: 'page_section',
 	text_align: 'text_align_section',
 	self_align: 'self_align_section',
+	i_text: 'i_text_section',
+	i_placeholder: 'i_placeholder_section',
+	i_input_type: 'i_input_type_section',
 }
 
 export const InputTypes = {
