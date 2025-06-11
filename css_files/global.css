@@ -209,7 +209,8 @@ main {
 	cursor: pointer;
 	display: grid;
 	align-items: center;
-	font-size: var(--font-size-2-half);
+	font-size: var(--font-size-2-1_4);
+	font-weight: lighter;
 }
 .property_section {
 	display: grid;

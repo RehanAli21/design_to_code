@@ -35,6 +35,13 @@ export default function showAvailableProperties() {
 	const activeElement = document.getElementById(ElementData.activeElementId)
 
 	if (activeElement) {
+		const individual_property_section = document.getElementById('individual_section')
+		if (ElementData.activeElementId == 'page') {
+			individual_property_section.style.display = 'none'
+		} else {
+			individual_property_section.style.display = ''
+		}
+
 		let activeElementTagName = getKeyForChildrenUsingTagName(activeElement.tagName)
 
 		for (const element of availablePropertiesForElements[activeElementTagName]) {
