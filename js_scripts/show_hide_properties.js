@@ -5,7 +5,6 @@ const textSectionHead = document.getElementById('text_section_head')
 const fontSectionHead = document.getElementById('font_section_head')
 const textAlignSectionHead = document.getElementById('text_align_section_head')
 const selfAlignSectionHead = document.getElementById('self_align_section_head')
-const individualSectionHead = document.getElementById('individual_section_head')
 
 const showProperties = {
 	page: false,
@@ -15,7 +14,6 @@ const showProperties = {
 	font: false,
 	text_align: false,
 	self_align: false,
-	individual: true,
 }
 
 if (transformSectionHead) {
@@ -57,13 +55,6 @@ if (selfAlignSectionHead) {
 	toggleProperties(false, 'self_align', 'self_align_section', ['property_section', 'property_section_no_class'], selfAlignSectionHead)
 	selfAlignSectionHead.addEventListener('click', () =>
 		toggleProperties(true, 'self_align', 'self_align_section', ['property_section', 'property_section_no_class'], selfAlignSectionHead)
-	)
-}
-
-if (individualSectionHead) {
-	toggleProperties(false, 'individual', 'individual_section', ['property_section', 'property_section_no_class'], individualSectionHead)
-	individualSectionHead.addEventListener('click', () =>
-		toggleProperties(true, 'individual', 'individual_section', ['property_section', 'property_section_no_class'], individualSectionHead)
 	)
 }
 
