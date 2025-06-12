@@ -5,7 +5,7 @@ const minInput = document.getElementById('min_property_input')
 
 export default function min() {
 	minInput.addEventListener('input', e => changePlaceholder(e))
-	minInput.addEventListener('focusout', () => savePlaceholder())
+	minInput.addEventListener('focusout', () => saveMin())
 }
 
 function changePlaceholder(e) {
@@ -17,7 +17,7 @@ function changePlaceholder(e) {
 	}
 }
 
-function savePlaceholder(children) {
+function saveMin(children) {
 	if (children == null || children == undefined) {
 		children = PagesData.pages[PagesData.activePage].children
 	}
@@ -25,13 +25,13 @@ function savePlaceholder(children) {
 	for (let i = 0; i < children.length; i++) {
 		const child = children[i]
 
-		if (child.id == ElementData.activeElementId && child.min) {
+		if (child.id == ElementData.activeElementId && Object.hasOwn(child, 'min')) {
 			child.min = ElementData.min
 			return true
 		}
 
 		if (child.can_have_children) {
-			if (savePlaceholder(child.children)) {
+			if (saveMin(child.children)) {
 				return true
 			}
 		}

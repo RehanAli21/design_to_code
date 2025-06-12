@@ -21,6 +21,7 @@ export function changeActiveElement(id) {
 		ElementData.innerText = newActiveElementData.innerText
 		ElementData.placeholder = newActiveElementData.placeholder
 		ElementData.inputType = newActiveElementData.inputType
+		ElementData.min = newActiveElementData.min
 	} else {
 		ElementData.styles = {
 			xsmall: {},
@@ -32,6 +33,7 @@ export function changeActiveElement(id) {
 		ElementData.innerText = ''
 		ElementData.placeholder = ''
 		ElementData.inputType = InputTypes.TEXT
+		ElementData.min = null
 	}
 
 	showAvailableElements()
@@ -51,6 +53,7 @@ function getDataFromActiveElement(id, children) {
 				innerText: child.innerText,
 				placeholder: child.placeholder ? child.placeholder : '',
 				inputType: child.inputType ? child.inputType : InputTypes.TEXT,
+				min: child.min ? child.min : null,
 			}
 			return attributes
 		}
