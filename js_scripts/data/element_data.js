@@ -12,5 +12,6 @@ export const ElementData = {
 	innerText: '',
 	placeholder: '',
 	min: null,
+	max: null,
 	inputType: InputTypes.TEXT,
 }
