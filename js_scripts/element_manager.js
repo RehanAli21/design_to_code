@@ -22,6 +22,7 @@ export function changeActiveElement(id) {
 		ElementData.placeholder = newActiveElementData.placeholder
 		ElementData.inputType = newActiveElementData.inputType
 		ElementData.min = newActiveElementData.min
+		ElementData.max = newActiveElementData.max
 	} else {
 		ElementData.styles = {
 			xsmall: {},
@@ -34,6 +35,7 @@ export function changeActiveElement(id) {
 		ElementData.placeholder = ''
 		ElementData.inputType = InputTypes.TEXT
 		ElementData.min = null
+		ElementData.max = null
 	}
 
 	showAvailableElements()
@@ -54,6 +56,7 @@ function getDataFromActiveElement(id, children) {
 				placeholder: child.placeholder ? child.placeholder : '',
 				inputType: child.inputType ? child.inputType : InputTypes.TEXT,
 				min: child.min ? child.min : null,
+				max: child.max ? child.max : null,
 			}
 			return attributes
 		}
