@@ -26,6 +26,8 @@ export const Properties = {
 	I_TEXT: 'i_text',
 	I_PLACEHOLDER: 'i_placeholder',
 	I_INPUT_TYPE: 'i_input_type',
+	I_MIN: 'i_min',
+	I_MAX: 'i_max',
 }
 
 export const PropertiesSectionIDs = {
@@ -39,6 +41,8 @@ export const PropertiesSectionIDs = {
 	i_text: 'i_text_section',
 	i_placeholder: 'i_placeholder_section',
 	i_input_type: 'i_input_type_section',
+	i_min: 'i_min_section',
+	i_max: 'i_max_section',
 }
 
 export const InputTypes = {
