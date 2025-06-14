@@ -100,6 +100,8 @@ function specificAttributesForElements(ele, child) {
 		if (child.type == 'a') {
 			ele.href = child.href
 		}
+	} else if (child.tagName == ElementTags.OPTION) {
+		ele.value = child.option_value
 	}
 
 	return ele
