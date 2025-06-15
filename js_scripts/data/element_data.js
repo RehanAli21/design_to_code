@@ -14,4 +14,5 @@ export const ElementData = {
 	min: null,
 	max: null,
 	inputType: InputTypes.TEXT,
+	option_value: '',
 }

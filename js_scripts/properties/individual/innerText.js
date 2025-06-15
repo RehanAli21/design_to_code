@@ -1,4 +1,5 @@
 import { ElementData } from '../../data/element_data.js'
+import { ElementTags } from '../../data/enums.js'
 import PagesData from '../../data/page_data.js'
 
 const innerTextArea = document.getElementById('text_property_textarea')
@@ -14,6 +15,11 @@ function changeInnerText(e) {
 	if (ele) {
 		ele.innerText = e.target.value
 		ElementData.innerText = e.target.value
+
+		if (ele.tagName.toLowerCase() == ElementTags.OPTION) {
+			ele.value = e.target.value
+			ElementData.option_value = e.target.value
+		}
 	}
 }
 
@@ -27,6 +33,10 @@ function saveInnerText(children) {
 
 		if (child.id == ElementData.activeElementId) {
 			child.innerText = ElementData.innerText
+
+			if (child.tagName.toLowerCase() == ElementTags.OPTION) {
+				child.option_value = ElementData.option_value
+			}
 			return true
 		}
 
