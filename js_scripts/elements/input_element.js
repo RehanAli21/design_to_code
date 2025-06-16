@@ -17,9 +17,6 @@ class Input extends TagElement {
 		this.defaultValue = ''
 		this.min = null
 		this.max = null
-		this.readonly = null
-		this.disabled = null
-		this.autocomplete = null
 	}
 }
 

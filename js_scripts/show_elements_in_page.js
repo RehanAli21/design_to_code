@@ -93,9 +93,6 @@ function specificAttributesForElements(ele, child) {
 		ele.defaultValue = child.defaultValue
 		ele.min = child.min
 		ele.max = child.max
-		ele.readonly = child.readonly
-		ele.disabled = child.disabled
-		ele.autocomplete = child.autocomplete
 	} else if (child.tagName == ElementTags.TEXT) {
 		if (child.type == 'a') {
 			ele.href = child.href
