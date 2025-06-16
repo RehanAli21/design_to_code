@@ -45,27 +45,28 @@ function createChildrenForHierarchy(children) {
 		const li = document.createElement('li')
 
 		const div = document.createElement('div')
+		div.classList.add('hierarchy_div')
 
 		div.style.display = 'grid'
-		div.style.gridTemplateColumns = '20px auto'
+		div.style.gridTemplateColumns = '25px auto 30px'
 
-		const button = document.createElement('button')
+		const toggleChildrenBtn = document.createElement('button')
 
 		if (child.can_have_children) {
-			button.innerText = child.showChildrenInHeirarchy ? '\u25BC' : '\u25BA'
+			toggleChildrenBtn.innerText = child.showChildrenInHeirarchy ? '\u25BC' : '\u25BA'
 
-			button.style.fontSize = '10px'
+			toggleChildrenBtn.style.fontSize = '10px'
 
-			button.addEventListener('click', () => {
+			toggleChildrenBtn.addEventListener('click', () => {
 				toggleShowChildrenInHierarchy(child.id, null)
 				printCurrentPageHierarchy()
 			})
 		}
 
-		button.style.border = 'none'
-		button.style.cursor = 'pointer'
+		toggleChildrenBtn.style.border = 'none'
+		toggleChildrenBtn.style.cursor = 'pointer'
 
-		div.appendChild(button)
+		div.appendChild(toggleChildrenBtn)
 
 		const p = document.createElement('p')
 
@@ -83,6 +84,16 @@ function createChildrenForHierarchy(children) {
 		p.style.backgroundColor = 'var(--background)'
 		p.style.marginLeft = '-5px'
 		div.appendChild(p)
+
+		const deleteButton = document.createElement('button')
+		deleteButton.innerText = '🗑'
+
+		deleteButton.style.border = 'none'
+		deleteButton.style.cursor = 'pointer'
+		deleteButton.style.backgroundColor = 'var(--danger-color)'
+		deleteButton.style.fontWeight = 'bolder'
+
+		div.append(deleteButton)
 
 		li.appendChild(div)
 
