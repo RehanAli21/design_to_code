@@ -77,3 +77,31 @@ function resetActiveElement() {
 	reprintEveryThing()
 }
 document.getElementById('hierarchy_div').addEventListener('dblclick', resetActiveElement)
+
+export function deleteElement(id) {
+	PagesData.pages[PagesData.activePage].children = deleteElementHelper(id, PagesData.pages[PagesData.activePage].children)
+
+	if (ElementData.activeElementId == id) {
+		changeActiveElement('')
+	} else {
+		printCurrentPageHierarchy()
+		printCurrentPageElements()
+	}
+}
+
+function deleteElementHelper(id, children) {
+	const newChildren = []
+	for (let i = 0; i < children.length; i++) {
+		const child = children[i]
+
+		if (child.id != id) {
+			newChildren.push(child)
+		}
+
+		if (child.can_have_children) {
+			child.children = deleteElementHelper(id, child.children)
+		}
+	}
+
+	return newChildren
+}

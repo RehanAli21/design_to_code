@@ -1,6 +1,6 @@
 import PagesData from './data/page_data.js'
 import { ElementData } from './data/element_data.js'
-import { changeActiveElement } from './element_manager.js'
+import { changeActiveElement, deleteElement } from './element_manager.js'
 
 export function printCurrentPageHierarchy() {
 	const page = PagesData.pages[PagesData.activePage]
@@ -92,6 +92,8 @@ function createChildrenForHierarchy(children) {
 		deleteButton.style.cursor = 'pointer'
 		deleteButton.style.backgroundColor = 'var(--danger-color)'
 		deleteButton.style.fontWeight = 'bolder'
+
+		deleteButton.addEventListener('click', () => deleteElement(child.id))
 
 		div.append(deleteButton)
 
