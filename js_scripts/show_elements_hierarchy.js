@@ -76,6 +76,7 @@ function createChildrenForHierarchy(children) {
 		if (child.id == ElementData.activeElementId) {
 			p.classList.add('primary-color')
 			p.classList.add('font-bold-700')
+			div.id = `${ElementData.activeElementId}_hierarchy`
 		}
 
 		p.addEventListener('click', () => changeActiveElement(child.id))
@@ -88,9 +89,10 @@ function createChildrenForHierarchy(children) {
 		const deleteButton = document.createElement('button')
 		deleteButton.innerText = '🗑'
 
-		deleteButton.style.border = 'none'
+		deleteButton.style.border = '1px solid var(--background)'
 		deleteButton.style.cursor = 'pointer'
 		deleteButton.style.backgroundColor = 'var(--danger-color)'
+		deleteButton.style.color = 'white'
 		deleteButton.style.fontWeight = 'bolder'
 
 		deleteButton.addEventListener('click', () => deleteElement(child.id))

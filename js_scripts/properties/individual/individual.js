@@ -1,3 +1,4 @@
+import elementName from './elementName.js'
 import innerText from './innerText.js'
 import inputType from './inputType.js'
 import max from './max.js'
@@ -10,4 +11,5 @@ export default function setUpIndividualProperties() {
 	inputType()
 	min()
 	max()
+	elementName()
 }

@@ -3,9 +3,10 @@ import { ElementData } from './data/element_data.js'
 import { getKeyForChildrenUsingTagName } from './show_elements_to_add.js'
 
 const availablePropertiesForElements = {
-	DIV: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXTALIGN, Properties.SLEFALIGN],
-	BUTTON: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXTALIGN, Properties.I_TEXT],
+	DIV: [Properties.ELEMENT_NAME, Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXTALIGN, Properties.SLEFALIGN],
+	BUTTON: [Properties.ELEMENT_NAME, Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXTALIGN, Properties.I_TEXT],
 	INPUT: [
+		Properties.ELEMENT_NAME,
 		Properties.TRANSFORM,
 		Properties.APPEARANCE,
 		Properties.FONT,
@@ -16,8 +17,9 @@ const availablePropertiesForElements = {
 		Properties.I_MAX,
 		Properties.I_INPUT_TYPE,
 	],
-	SELECT: [Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT, Properties.TEXTALIGN],
+	SELECT: [Properties.ELEMENT_NAME, Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXT, Properties.TEXTALIGN],
 	TEXT: [
+		Properties.ELEMENT_NAME,
 		Properties.TRANSFORM,
 		Properties.APPEARANCE,
 		Properties.TEXT,
@@ -26,8 +28,8 @@ const availablePropertiesForElements = {
 		Properties.SLEFALIGN,
 		Properties.I_TEXT,
 	],
-	OPTION: [Properties.I_TEXT],
-	PAGE: [Properties.PAGE],
+	OPTION: [Properties.ELEMENT_NAME, Properties.I_TEXT],
+	PAGE: [Properties.ELEMENT_NAME, Properties.PAGE],
 }
 
 export default function showAvailableProperties() {

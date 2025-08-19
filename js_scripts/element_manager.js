@@ -23,6 +23,7 @@ export function changeActiveElement(id) {
 		ElementData.inputType = newActiveElementData.inputType
 		ElementData.min = newActiveElementData.min
 		ElementData.max = newActiveElementData.max
+		ElementData.name = newActiveElementData.name
 	} else {
 		ElementData.styles = {
 			xsmall: {},
@@ -36,6 +37,7 @@ export function changeActiveElement(id) {
 		ElementData.inputType = InputTypes.TEXT
 		ElementData.min = null
 		ElementData.max = null
+		ElementData.name = ''
 	}
 
 	showAvailableElements()
@@ -57,6 +59,7 @@ function getDataFromActiveElement(id, children) {
 				inputType: child.inputType ? child.inputType : InputTypes.TEXT,
 				min: child.min ? child.min : null,
 				max: child.max ? child.max : null,
+				name: child.name ? child.name : '',
 			}
 			return attributes
 		}

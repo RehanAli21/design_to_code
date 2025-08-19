@@ -9,6 +9,7 @@ export const ElementData = {
 		large: {},
 		xLarge: {},
 	},
+	name: '',
 	innerText: '',
 	placeholder: '',
 	min: null,

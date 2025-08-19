@@ -7,6 +7,7 @@ export default function updateIndividualPropertyUI() {
 	const inputTypeSelect = document.getElementById('input_type_property_select')
 	const minInput = document.getElementById('min_property_input')
 	const maxInput = document.getElementById('max_property_input')
+	const elementNameInput = document.getElementById('element_name_property_input')
 
 	innerTextArea.value = ElementData.innerText
 
@@ -15,6 +16,8 @@ export default function updateIndividualPropertyUI() {
 	maxInput.value = ElementData.max
 
 	placeholderInput.value = ElementData.placeholder
+
+	elementNameInput.value = ElementData.name
 
 	for (const key in InputTypes) {
 		if (ElementData.inputType == InputTypes[key]) {
