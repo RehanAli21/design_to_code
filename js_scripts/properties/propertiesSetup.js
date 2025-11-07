@@ -1,5 +1,6 @@
 import setUpAppearance from './appearance/appearance.js'
 import setUpFont from './font/font.js'
+import setUpGrid from './individual/grid.js'
 import setUpIndividualProperties from './individual/individual.js'
 import setUpPageProperties from './page/page.js'
 import setUpSelfAlign from './selfAlign/selfAlign.js'
@@ -16,6 +17,7 @@ function setUpAllProperties() {
 	setUpTextAlign()
 	setUpSelfAlign()
 	setUpIndividualProperties()
+	setUpGrid()
 }
 
 setUpAllProperties()
