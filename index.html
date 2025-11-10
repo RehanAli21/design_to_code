@@ -175,7 +175,7 @@
 								<label>Grid</label>
 							</div>
 							<div
-								class="property_section"
+								class="property_section property_section_head"
 								style="grid-template-columns: repeat(2, 50%); justify-content: center">
 								<button
 									id="grid_col_btn"
@@ -184,9 +184,10 @@
 								</button>
 								<button id="grid_row_btn">Rows</button>
 							</div>
-							<!-- <div
+							<div
 								class="property_section"
-								style="display: grid; grid-template-columns: 40% 60%; justify-content: center; margin: 10px auto">
+								style="display: none; grid-template-columns: 40% 60%; justify-content: center; margin: 10px auto"
+								id="cols-number-input">
 								<label class="input">Columns: </label>
 								<input
 									class="input"
@@ -194,6 +195,18 @@
 									placeholder="Number Of Columns"
 									id="num_of_cols_property_input" />
 							</div>
+							<div
+								class="property_section"
+								style="display: none; grid-template-columns: 40% 60%; justify-content: center; margin: 10px auto"
+								id="rows-number-input">
+								<label class="input">Rows: </label>
+								<input
+									class="input"
+									type="number"
+									placeholder="Number Of Rows"
+									id="num_of_rows_property_input" />
+							</div>
+							<!--
 							<div
 								class="property_section"
 								style="width: 80%; display: grid; grid-template-columns: 30% 30% 30%; justify-content: center; margin: 10px auto">
@@ -247,16 +260,6 @@
 									<option value="px">PX</option>
 									<option value="%">%</option>
 								</select>
-							</div>
-							<div
-								class="property_section"
-								style="display: grid; grid-template-columns: 40% 60%; justify-content: center; margin: 10px auto">
-								<label class="input">Rows: </label>
-								<input
-									class="input"
-									type="number"
-									placeholder="Number Of Rows"
-									id="num_of_rows_property_input" />
 							</div>
 							<div
 								class="property_section"
