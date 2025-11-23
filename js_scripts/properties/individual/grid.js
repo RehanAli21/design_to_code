@@ -37,6 +37,48 @@ export default function setUpGrid() {
 		gridRowNumInput.style.display = 'grid'
 		gridRowToggler.style.backgroundColor = 'var(--primary)'
 	})
+
+	gridColNumInput.addEventListener('input', e => {
+		if (e.target.value < 1 || e.target.value > 25 || Number.isNaN(e.target.value)) return
+
+		const numOfCols = parseInt(e.target.value)
+
+		// continue from here add number of frs based on numofCols
+
+		let frs = ''
+
+		for (let i = 0; i < numOfCols; i++) {
+			frs += '1fr '
+		}
+
+		removeRows()
+		changeElementStyle(['grid-template-columns'], { value: frs }, 'no_value')
+		saveDataIntoElement()
+
+		gridColNumInput.style.display = 'grid'
+		gridColToggler.style.backgroundColor = 'var(--primary)'
+	})
+
+	gridRowNumInput.addEventListener('input', e => {
+		if (e.target.value < 1 || e.target.value > 25 || Number.isNaN(e.target.value)) return
+
+		const numOfRows = parseInt(e.target.value)
+
+		// continue from here add number of frs based on numofRows
+
+		let frs = ''
+
+		for (let i = 0; i < numOfRows; i++) {
+			frs += '1fr '
+		}
+
+		removeCols()
+		changeElementStyle(['grid-template-rows'], { value: frs }, 'no_value')
+		saveDataIntoElement()
+
+		gridRowNumInput.style.display = 'grid'
+		gridRowToggler.style.backgroundColor = 'var(--primary)'
+	})
 }
 
 export function toggleGridStyles(gridToggler, show) {
