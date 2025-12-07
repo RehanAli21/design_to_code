@@ -3,7 +3,7 @@ import { ElementData } from './data/element_data.js'
 import { getKeyForChildrenUsingTagName } from './show_elements_to_add.js'
 
 const availablePropertiesForElements = {
-	DIV: [Properties.ELEMENT_NAME, Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXTALIGN, Properties.SLEFALIGN],
+	DIV: [Properties.ELEMENT_NAME, Properties.I_GRID, Properties.TRANSFORM, Properties.APPEARANCE, Properties.TEXTALIGN, Properties.SLEFALIGN],
 	BUTTON: [Properties.ELEMENT_NAME, Properties.TRANSFORM, Properties.APPEARANCE, Properties.FONT, Properties.TEXTALIGN, Properties.I_TEXT],
 	INPUT: [
 		Properties.ELEMENT_NAME,
