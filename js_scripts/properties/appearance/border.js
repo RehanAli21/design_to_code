@@ -1,4 +1,6 @@
 import { ElementData } from '../../data/element_data.js'
+import { PageModes } from '../../data/enums.js'
+import PagesData from '../../data/page_data.js'
 import { changeElementStyle, removeElementStyle, saveDataIntoElement } from '../property_base.js'
 
 const borderToggler = document.getElementById('appeareance_border_toggle')
@@ -20,7 +22,7 @@ export default function setUpBorder() {
 	if (borderToggler) {
 		borderToggler.addEventListener('focusout', saveDataIntoElement)
 
-		toggleBorderStyles(borderToggler, borderToggler.checked)
+		// toggleBorderStyles(borderToggler, borderToggler.checked)
 
 		borderToggler.addEventListener('change', () => {
 			toggleBorderStyles(borderToggler, borderToggler.checked)
@@ -138,12 +140,43 @@ export function toggleBorderStyles(borderToggler, show) {
 		}
 	}
 
+	// these if else are checking if border already present then do not need to set border to default value
+	// this was a written to solve a bug, whenever you change border value and go to other element and when you return to element the border value was setting to default
+	if (PagesData.activePageWidthMode === PageModes.XSMALL) {
+		const style = ElementData.styles.xsmall
+
+		if (Object.hasOwn(style, currentBorderSideValue)) {
+			return
+		}
+	} else if (PagesData.activePageWidthMode === PageModes.SMALL) {
+		const style = ElementData.styles.small
+
+		if (Object.hasOwn(style, currentBorderSideValue)) {
+			return
+		}
+	} else if (PagesData.activePageWidthMode === PageModes.MEDIUM) {
+		const style = ElementData.styles.medium
+		if (Object.hasOwn(style, currentBorderSideValue)) {
+			return
+		}
+	} else if (PagesData.activePageWidthMode === PageModes.LARGE) {
+		const style = ElementData.styles.large
+		if (Object.hasOwn(style, currentBorderSideValue)) {
+			return
+		}
+	} else if (PagesData.activePageWidthMode === PageModes.XLARGE) {
+		const style = ElementData.styles.xLarge
+		if (Object.hasOwn(style, currentBorderSideValue)) {
+			return
+		}
+	}
+
 	let borderValue = show ? '1px solid #000000' : ''
 
 	if (borderValue == '') {
 		removeAllBorderProperties()
 	} else {
-		changeElementStyle(['border'], { value: borderValue }, 'no_value')
+		changeElementStyle([currentBorderSideValue], { value: borderValue }, 'no_value')
 	}
 }
 
