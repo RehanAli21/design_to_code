@@ -46,6 +46,8 @@ const showOptionMenu = e => {
 		ele.style.display = 'block'
 		ele.style.top = `${e.pageY}px`
 		ele.style.left = `${e.pageX}px`
+
+		localStorage.setItem('right_click_select_item_id', e.target.id)
 	}
 }
 

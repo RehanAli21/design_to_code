@@ -109,11 +109,105 @@ function deleteElementHelper(id, children) {
 	return newChildren
 }
 
+export function getElementById(id, children) {
+	for (let i = 0; i < children.length; i++) {
+		const child = children[i]
+
+		if (child.id === id) {
+			return structuredClone(child) // ✅ no reference at all
+		}
+
+		if (child.can_have_children) {
+			const found = getElementById(id, child.children)
+			if (found) return found
+		}
+	}
+	return null
+}
+
+function regenerateIds(element) {
+	element.id = `${element.id}c`
+
+	if (element.can_have_children && element.children) {
+		element.children.forEach(child => regenerateIds(child))
+	}
+
+	return element
+}
+// params
+// elementToAdd: element got from hierarchy
+// parentId: element id in which you want to put this element as child
+// children of page data, to find only in active page children
+export function addAlreadyCreatedElementIntoElement(elementToAdd, parentId, children) {
+	for (let i = 0; i < children.length; i++) {
+		const child = children[i]
+
+		console.log(child.id, parentId)
+
+		if (child.id === parentId && child.can_have_children) {
+			child.children.push(elementToAdd)
+			return true
+		}
+
+		if (child.can_have_children) {
+			const found = addAlreadyCreatedElementIntoElement(elementToAdd, parentId, child.children)
+			if (found) return found
+		}
+	}
+	return false
+}
+
 //For hidding the menu
 document.addEventListener('click', e => {
 	const ele = document.getElementById('right_click_menu')
 
 	if (ele) {
 		ele.style.display = 'none'
+
+		localStorage.removeItem('right_click_select_item_id')
 	}
 })
+
+const copyElement = document.getElementById('copy_element')
+
+if (copyElement) {
+	copyElement.addEventListener('click', () => {
+		const copiedElementId = localStorage.getItem('right_click_select_item_id')
+
+		if (copiedElementId) localStorage.setItem('copied_element_id', copiedElementId)
+	})
+}
+
+const pasteElement = document.getElementById('paste_element')
+
+if (pasteElement) {
+	pasteElement.addEventListener('click', () => {
+		let copiedElementId = localStorage.getItem('copied_element_id')
+
+		let pasteIntoElmentId = localStorage.getItem('right_click_select_item_id')
+
+		if (!copiedElementId || !pasteIntoElmentId) return
+
+		copiedElementId = copiedElementId.replace('point_', '')
+
+		pasteIntoElmentId = pasteIntoElmentId.replace('point_', '')
+
+		console.log(`copy element with id ${copiedElementId}`)
+		console.log(`paste in element with id ${pasteIntoElmentId}`)
+
+		const pageChildren = PagesData.pages[PagesData.activePage].children
+
+		const element = getElementById(copiedElementId, pageChildren)
+
+		regenerateIds(element)
+
+		const res = addAlreadyCreatedElementIntoElement(element, pasteIntoElmentId, pageChildren)
+
+		if (res) {
+			localStorage.setItem('copied_element_id', `point_${copiedElementId}c`)
+			reprintEveryThing()
+		} else {
+			console.log('error or id not match on copy paste the element')
+		}
+	})
+}
