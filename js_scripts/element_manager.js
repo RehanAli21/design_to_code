@@ -108,3 +108,12 @@ function deleteElementHelper(id, children) {
 
 	return newChildren
 }
+
+//For hidding the menu
+document.addEventListener('click', e => {
+	const ele = document.getElementById('right_click_menu')
+
+	if (ele) {
+		ele.style.display = 'none'
+	}
+})

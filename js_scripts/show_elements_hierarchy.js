@@ -37,6 +37,18 @@ export function printCurrentPageHierarchy() {
 	}
 }
 
+//For setting position and showing menu
+const showOptionMenu = e => {
+	e.preventDefault()
+	const ele = document.getElementById('right_click_menu')
+
+	if (ele) {
+		ele.style.display = 'block'
+		ele.style.top = `${e.pageY}px`
+		ele.style.left = `${e.pageX}px`
+	}
+}
+
 function createChildrenForHierarchy(children) {
 	const ul = document.createElement('ul')
 	ul.classList.add('tree')
@@ -80,6 +92,9 @@ function createChildrenForHierarchy(children) {
 		}
 
 		p.addEventListener('click', () => changeActiveElement(child.id))
+		// in element_manager.js I have added event onclick to hide this menu
+		// and this event shows the menu
+		p.addEventListener('contextmenu', showOptionMenu)
 
 		p.innerText = child.name
 		p.style.backgroundColor = 'var(--background)'

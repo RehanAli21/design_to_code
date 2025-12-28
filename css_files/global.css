@@ -151,6 +151,26 @@ nav input[type='checkbox'] {
 	color: var(--shade-three);
 }
 
+#right_click_menu {
+	display: none;
+	width: 200px !important;
+	overflow: hidden !important;
+	padding-left: 15px;
+	position: absolute;
+	border: 1px solid var(--primary);
+	padding: 0px;
+	background-color: var(--background);
+}
+
+#right_click_menu > p {
+	padding: 10px 5px 10px 10px;
+}
+
+#right_click_menu > p:hover {
+	background-color: var(--primary);
+	color: white;
+}
+
 @media (max-width: 768px) {
 	.menu-icon {
 		display: block;
